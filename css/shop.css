@@ -1,0 +1,99 @@
+.shop {
+    padding: 20px;
+    width: 100%;
+}
+
+.shop .shop-content {
+    background: none repeat scroll 0% 0% #F5F2ED;
+    border: 1px solid #DFDDD1;
+    padding: 20px;
+}
+
+.shop .shop-content.cgv {
+    border: none;
+    background: transparent;
+}
+
+.shop .shop-title {
+    text-transform: uppercase;
+    font-family: 'Bebas Neue', sans-serif;
+    font-weight: 400;
+    font-size: 26px;
+    color: #28170E;
+    margin-bottom: 10px;
+}
+
+.shop .shop-title span {
+    background-position: -148px 0px;
+    margin-right: 0.2em;
+    padding: 0px 0.2em;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    width: auto;
+    height: 28px;
+    line-height: 28px;
+}
+
+.shop .shop-element {
+    width: 100%;
+    cursor: pointer;
+    background: none repeat scroll 0% 0% #FFF;
+    margin-bottom: 5px;
+    padding: 10px;
+}
+
+.shop .shop-element.promo {
+    border: 1px solid #F7AE2E;
+}
+
+.shop .shop-element.unavailable {
+    pointer-events: none;
+}
+
+.shop .unavailable .shop-description {
+    opacity:.4;
+}
+
+.shop .shop-icon {
+    margin-right: 30px;
+}
+
+.shop .shop-icon img {
+    max-width: 60px;
+}
+
+.shop .shop-name {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #28170E;
+}
+
+.shop .shop-name span {
+    color: #D24C0C;
+}
+
+.shop .shop-promo {
+    margin-top: 12px;
+    background: url("../imgs/shop/promo_bg.png") repeat scroll 0% 0% #F7AE2E;
+    color: #FFF;
+    padding: 10px;
+    text-transform: uppercase;
+}
+
+.shop .shop-promo .promo-title {
+    background: none repeat scroll 0% 0% #FFF;
+    color: #F7AE2E;
+    font-size: 20px;
+    line-height: 20px;
+    padding: 0px 0.5rem;
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+.shop .shop-promo .promo-desc {
+    padding: 0.5rem;
+    font-size: 13px;
+    font-family: 'Roboto', sans-serif;
+    overflow: hidden;
+    vertical-align: top;
+}
