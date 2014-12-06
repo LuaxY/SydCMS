@@ -1,6 +1,7 @@
 .shop {
     padding: 20px;
     width: 100%;
+    overflow: auto;
 }
 
 .shop .shop-content {
@@ -12,6 +13,42 @@
 .shop .shop-content.cgv {
     border: none;
     background: transparent;
+}
+
+.shop .cgv .checkbox {
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+    width: 460px;
+    float: left;
+    text-align: justify;
+}
+
+.shop .cgv button.buy {
+    width: 300px;
+    text-transform: uppercase;
+    font-family: 'Bebas Neue', sans-serif;
+    font-weight: 400;
+    background-color: #23a9b5;
+    font-size: 23px;
+    color: #fff;
+    text-shadow: 0px 1px 1px #333;
+    padding: 5px 0;
+    text-align: center;
+    border: medium none;
+    cursor: pointer;
+    float: right;
+}
+
+.shop .cgv button.buy:hover {
+    background-color: #37d3d8;
+}
+
+.shop .cgv button.buy span {
+    display: block;
+    text-transform: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+    font-style: italic;
 }
 
 .shop .shop-title {
