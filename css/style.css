@@ -639,7 +639,7 @@ button {
     border-top: 1px solid #02AFFF;
     background-color: #070707;
     width: 100%;
-    height: 200px;
+    height: 230px;
 }
 
 #footer .container {
@@ -691,4 +691,25 @@ button {
 
 #footer .menu li:hover {
     color: #FFF;
+}
+
+#footer .copyright {
+    text-align: center;
+    color: #838383;
+    font-size: 11px;
+}
+
+#footer .copyright a {
+    color: #838383;
+}
+
+#footer .copyright a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+#footer .pegi {
+    position: absolute;
+    left: 50%;
+    margin: -35px 0 20px 300px;
 }
