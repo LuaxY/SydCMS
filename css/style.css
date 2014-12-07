@@ -111,6 +111,10 @@ button {
     background-position: 0px -1625px;
 }
 
+.icon-chacha {
+    background-position: 0px -2606px;
+}
+
 /*-----------------------------------------------*/
 /*-------------------HEADER----------------------*/
 /*-----------------------------------------------*/
@@ -308,18 +312,19 @@ button {
 }
 
 .panel .panel-title {
-    background: url("../imgs/simple-title.png") no-repeat scroll left top / 60px auto #23a9b5;
+    background: url('../imgs/simple-title.png') no-repeat scroll left top / 60px auto #23a9b5;
     color: #fff;
     text-transform: uppercase;
-    font-family: 'Oswald', sans-serif;
-    font-size: 26px;
-    padding: 5px 0px 5px 0px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 30px;
+    padding: 7px 0px 5px 0px;
     border-bottom-color: #797979 !important;
     border-bottom: 1px solid;
+    min-height: 50px;
 }
 
 .panel .panel-title .icon-med {
-    margin: -5px 20px 0 5px;
+    margin: -8px 20px 0 4px;
 }
 
 .panel .level-1 {
@@ -382,6 +387,170 @@ button {
     margin-right: 0.5rem;
     width: 35px;
     height: 35px;
+}
+
+.panel.blue {
+    background: url("../imgs/blue-bg.jpg") repeat scroll 0px 0px transparent;
+    border-bottom-color: #064E68 !important;
+}
+
+.panel.blue .panel-title {
+    background: url('../imgs/blue-title.png') no-repeat scroll left top / 60px auto #064E68;
+    border-bottom-color: #21A3D3 !important;
+}
+
+.panel .panel-content.login {
+    padding: 5px;
+}
+
+.panel .panel-content.login .form-group {
+    margin-bottom: 5px;
+}
+
+.panel .panel-content.login label {
+    color: #fff;
+}
+
+.panel .panel-content.login .btn-medium {
+    margin: 10px 0;
+}
+
+.panel .panel-content.login .block-submit input {
+    background: -webkit-linear-gradient(#99d8f7 1%, #78cffa 7%, #11acfa 14%, #11a0f2 41%, #11a0f2 52%, #11a0f2 88%, #11cbfa 99%) repeat scroll 0% 0% transparent;
+    background: -o-linear-gradient(#99d8f7 1%, #78cffa 7%, #11acfa 14%, #11a0f2 41%, #11a0f2 52%, #11a0f2 88%, #11cbfa 99%) repeat scroll 0% 0% transparent;
+    background: linear-gradient(#99d8f7 1%, #78cffa 7%, #11acfa 14%, #11a0f2 41%, #11a0f2 52%, #11a0f2 88%, #11cbfa 99%) repeat scroll 0% 0% transparent;
+}
+
+.panel .panel-content.login .block-submit input:hover
+{
+    background: -webkit-linear-gradient(#99f7f6 1%, #78faf8 7%, #11faf6 14%, #11cbf2 41%, #11cbf2 52%, #11cbf2 88%, #11faf6 99%) repeat scroll 0% 0% transparent;
+    background: -o-linear-gradient(#99f7f6 1%, #78faf8 7%, #11faf6 14%, #11cbf2 41%, #11cbf2 52%, #11cbf2 88%, #11faf6 99%) repeat scroll 0% 0% transparent;
+    background: linear-gradient(#99f7f6 1%, #78faf8 7%, #11faf6 14%, #11cbf2 41%, #11cbf2 52%, #11cbf2 88%, #11faf6 99%) repeat scroll 0% 0% transparent;
+}
+
+/*-----------------------------------------------*/
+/*---------------------FORM----------------------*/
+/*-----------------------------------------------*/
+
+.form-group {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    color: #735C3E;
+    padding: 5px;
+    text-align: left;
+    display: inline-block;
+    max-width: 100%;
+    font-weight: 700;
+}
+
+.form-group input[type="text"],
+.form-group input[type="password"],
+.form-group input[type="email"] {
+    display: inline-block;
+    width: 100%;
+    background-color: #FFF;
+    border: 1px solid #C7C3B4;
+    border-radius: 0px;
+    padding: 6px 12px;
+    height: 45px;
+    font-size: 14px;
+    line-height: 1.42857;
+    color: #555;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset;
+}
+
+.form-group input:focus {
+    background-color: #EDEAE0;
+}
+
+.form-group input[type="text"].has-error,
+.form-group input[type="password"].has-error,
+.form-group input[type="date"].has-error,
+.form-group input[type="datetime-local"].has-error,
+.form-group input[type="email"].has-error {
+    box-shadow: 0px 0px 2px 1px #EF3115;
+    background-color: #E4442C;
+    border-color: #E4442C;
+    color: #FFF;
+}
+
+.form-group input.has-error:focus {
+    background-color: #E4442C;
+}
+
+.form-group #passwordpower {
+    background-image: url("../imgs/passwordpower.png");
+    height: 35px;
+    position: absolute;
+    right: 10px;
+    top: 36px;
+    width: 17px;
+}
+
+.form-group #passwordpower.low {
+    background-position: -34px 0px;
+}
+
+.form-group #passwordpower.medium {
+    background-position: -51px 0px;
+}
+
+.form-group #passwordpower.good {
+    background-position: -68px 0px;
+}
+
+.form-group #passwordpower.high {
+    background-position: -85px 0px;
+}
+
+.form-group .checkbox {
+    position: relative;
+    display: block;
+    min-height: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 13px;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.form-group.captcha {
+    display: inline-block;
+    width: 304px;
+    height: 78px;
+    margin-left: 0px !important;
+}
+
+.block-submit {
+    text-align: center;
+}
+
+.btn-medium,
+.btn-big {
+    border: medium none;
+    box-shadow: 0px 2px 2px 0px #000;
+    text-shadow: 0px 1px 1px #333;
+    font-family: 'Bebas Neue', sans-serif;
+    border-radius: 3px;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.btn-medium {
+    font-weight: 400;
+    font-size: 26px;
+    padding: 2px 10px;
+}
+
+.btn-big {
+    font-weight: 400;
+    font-size: 34px;
+    padding: 12px 34px;
 }
 
 /*-----------------------------------------------*/
