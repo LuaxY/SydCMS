@@ -31,16 +31,20 @@ class AccountsController extends \BaseController {
 	 */
 	public function store()
 	{
+		$verifier = App::make('validation.presence');
+		$verifier->setConnection('auth');
 		$validator = Validator::make($data = Input::all(), Account::$rules);
+		$validator->setPresenceVerifier($verifier);
 
 		if ($validator->fails())
 		{
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
 
-		Account::create($data);
+		/*Account::create($data);
 
-		return Redirect::route('accounts.index');
+		return Redirect::route('accounts.index');*/
+		die("done");
 	}
 
 	/**
@@ -64,9 +68,9 @@ class AccountsController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		$account = Account::find($id);
+		/*$account = Account::find($id);
 
-		return View::make('accounts.edit', compact('account'));
+		return View::make('accounts.edit', compact('account'));*/
 	}
 
 	/**
@@ -77,7 +81,7 @@ class AccountsController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		$account = Account::findOrFail($id);
+		/*$account = Account::findOrFail($id);
 
 		$validator = Validator::make($data = Input::all(), Account::$rules);
 
@@ -88,20 +92,7 @@ class AccountsController extends \BaseController {
 
 		$account->update($data);
 
-		return Redirect::route('accounts.index');
-	}
-
-	/**
-	 * Remove the specified account from storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function destroy($id)
-	{
-		Account::destroy($id);
-
-		return Redirect::route('accounts.index');
+		return Redirect::route('accounts.index');*/
 	}
 
 }

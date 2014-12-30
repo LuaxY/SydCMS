@@ -4,4 +4,13 @@ class Account extends \Eloquent {
 	protected $fillable = [];
 	protected $table = 'accounts';
 	protected $connection = 'auth';
+
+	public static $rules = array(
+		'username'             => 'required|min:3|max:32|unique:accounts,Login',
+		'password'             => 'required|min:6',
+		'password_confirm' 	   => 'required|same:password',
+		'email'                => 'required|email|unique:accounts,Email',
+		'g-recaptcha-response' => 'required|recaptcha',
+		'cg'                   => 'required'
+	);
 }

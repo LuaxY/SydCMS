@@ -591,7 +591,6 @@ button {
     display: block;
     min-height: 20px;
     margin-top: 10px;
-    margin-bottom: 10px;
     font-size: 13px;
     font-weight: 400;
     cursor: pointer;
@@ -631,6 +630,12 @@ button {
     font-weight: 400;
     font-size: 34px;
     padding: 12px 34px;
+}
+
+.input-error {
+    color: #E4442C;
+    font-weight: 700;
+    line-height: 2;
 }
 
 /*-----------------------------------------------*/

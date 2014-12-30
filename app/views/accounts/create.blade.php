@@ -24,38 +24,44 @@
                             </div>
                         </div>
                         <div class="block-body">
-                            <form method="POST" action="">
+                            {{ Form::open(array('action' => 'AccountsController@store')) }}
                                 <div class="form-group">
                                     <label for="username">Nom de compte*</label>
-                                    <input id="username" type="text" autocorrect="off" autocapitalize="off" placeholder="Nom de compte" name="useranme" />
+                                    <input id="username" type="text" autocorrect="off" autocapitalize="off" placeholder="Nom de compte" name="username" value="{{ Input::old('username') }}" @if ($errors->has('username')) class="has-error" @endif />
+                                    @if ($errors->has('username')) <span class="input-error">{{ $errors->first('username') }}</span> @endif
                                 </div>
                                 <div class="form-group">
                                     <label for="password">Mot de passe*</label>
-                                    <input id="password" type="password" placeholder="Mot de passe" name="password" />
+                                    <input id="password" type="password" placeholder="Mot de passe" name="password" @if ($errors->has('password')) class="has-error" @endif />
                                     <div id="passwordpower"></div>
+                                    @if ($errors->has('password')) <span class="input-error">{{ $errors->first('password') }}</span> @endif
                                 </div>
                                 <div class="form-group">
                                     <label for="password_confirm">Confirmation*</label>
-                                    <input id="password_confirm" type="password" placeholder="Confirmation" name="password_confirm" />
+                                    <input id="password_confirm" type="password" placeholder="Confirmation" name="password_confirm" @if ($errors->has('password_confirm')) class="has-error" @endif />
+                                    @if ($errors->has('password_confirm')) <span class="input-error">{{ $errors->first('password_confirm') }}</span> @endif
                                 </div>
                                 <div class="form-group">
                                     <label for="email">E-mail*</label>
-                                    <input id="email" type="email" placeholder="E-mail" name="email" />
+                                    <input id="email" type="email" placeholder="E-mail" name="email" value="{{ Input::old('email') }}" @if ($errors->has('email')) class="has-error" @endif />
+                                    @if ($errors->has('email')) <span class="input-error">{{ $errors->first('email') }}</span> @endif
                                 </div>
                                 <div class="form-group captcha">
                                     <label for="captcha">Code de sécurité*</label>
-                                    <div class="g-recaptcha" data-sitekey="6Ld70v0SAAAAAKCdWTSc9PJrDxzoY6bHQG0EYlXI"></div>
+                                    {{ Form::captcha() }}
                                 </div>
+                                @if ($errors->has('g-recaptcha-response')) <br /><span class="input-error">{{ $errors->first('g-recaptcha-response') }}</span> @endif
                                 <div class="form-group">
                                     <label class="checkbox">
                                         <input type="checkbox" name="cg" value="1" />
                                         J'ai lu et j'accepte les <a href="">conditions générales</a> du site.
                                     </label>
+                                    @if ($errors->has('cg')) <span class="input-error">{{ $errors->first('cg') }}</span> @endif
                                 </div>
                                 <div class="block-submit">
                                     <input class="btn-big" type="submit" value="Terminer l'inscription" />
                                 </div>
-                            </form>
+                            {{ Form::close() }}
                         </div> <!-- block-body -->
                     </div> <!-- main -->
                 </div> <!-- step-1 -->
