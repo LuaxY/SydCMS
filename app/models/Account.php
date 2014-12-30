@@ -1,7 +1,19 @@
 <?php
 
 class Account extends \Eloquent {
-	protected $fillable = [];
+	protected $fillable = array(
+		'Login',
+		'PasswordHash',
+		'Nickname',
+		'Role',
+		'Ticket',
+		'SecretQSuestion',
+		'SecretAnswer',
+		'Lang',
+		'Email',
+		'CreationDate',
+		'SubscriptionEndDate',
+	);
 	protected $table = 'accounts';
 	protected $connection = 'auth';
 
