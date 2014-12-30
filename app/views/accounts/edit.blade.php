@@ -1,0 +1,1 @@
+C:\wamp\www\SydCMS\app/views/accounts/edit.blade.php

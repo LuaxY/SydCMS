@@ -4,8 +4,9 @@ body, div {
 }
 
 body {
-    background: url("../imgs/backgrounds/nowel2.jpg") no-repeat scroll center top #CDD5D8; /* Nowel */
-    /*background: url("../imgs/backgrounds/background2.jpg") no-repeat scroll center top #0D1E29;*/ /* Eliotropes */
+    /*background: url("../imgs/backgrounds/nowel1.jpg") no-repeat scroll center top #CDD5D8;*/ /* Nowel 1 */
+    background: url("../imgs/backgrounds/nowel2.jpg") no-repeat scroll center top #0E425E; /* Nowel 2 */
+    /*background: url("../imgs/backgrounds/eliostrope2.jpg") no-repeat scroll center top #0D1E29;*/ /* Eliotropes */
     font-size: 15px;
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
 }
@@ -463,6 +464,8 @@ button {
 
 .panel .panel-content.account .account-avatar img {
     border: 2px solid #21A3D3;
+    width: 100px;
+    height: 100px;
 }
 
 .panel .panel-content.account .account-details {

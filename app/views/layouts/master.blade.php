@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oswald" type="text/css">
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto" type="text/css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/404.css">
+    <link rel="stylesheet" href="css/shop.css">
 </head>
 <body>
     <div id="header">
@@ -26,16 +26,29 @@
         </div>
     </div>
 
-    <div class="container">
-        <div class="p404">
-            <div class="p404-text">
-                <div>404</div>
-                <div>Tous les chemins mènent au monde des douze...</div>
-                <div>sauf celui-là !</div>
-            </div>
-            <a class="p404-back" href="/">Aller à l'accueil</a>
-        </div>
+    <div id="carroussel">
+        <video class="video" poster="imgs/carroussel/nowel2/nowel.png" loop="loop" autoplay="">
+            <source src="imgs/carroussel/nowel2/nowel.mp4" type="video/mp4"></source>
+            <source src="imgs/carroussel/nowel2/nowel.webm" type="video/webm"></source>
+            <source src="imgs/carroussel/nowel2/nowel.ogv" type="video/ogv"></source>
+        </video>
     </div>
+    
+    <div class="container">
+        <div id="play">
+            <a href="#">Jouer !</a>
+        </div>
+
+        <div id="main">
+            <div class="left">
+                @yield('menu')
+            </div> <!-- left -->
+
+            <div class="right">
+                @yield('content')
+            </div> <!-- right -->
+        </div> <!-- main-->
+    </div> <!-- container -->
 
     <div id="footer">
         <div class="container">
@@ -71,7 +84,7 @@
             </div>
         </div>
         <div class="container copyright">
-            <a href="">Sydoria</a> &copy; 2014. Tous droits réservés. <a href="">Conditions d'utilisation</a> - <a href="">Conditions Générales de Vente</a>
+            <a href="">Sydoria</a> &copy; 2015. Tous droits réservés. <a href="">Conditions d'utilisation</a> - <a href="">Conditions Générales de Vente</a>
         </div>
         <div class="pegi"><img src="imgs/picto_prevention.png" /></div>
     </div>
