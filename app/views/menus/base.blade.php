@@ -25,7 +25,7 @@
                         <span class="icon-med sprite sprite-chacha"></span>Mon compte
                     </div>
                     <div class="panel-content account">
-                        <div class="account-avatar"><img src="imgs/avatar/94.png" /></div>
+                        <div class="account-avatar"><img src="{{ URL::asset('imgs/avatar/94.png') }}" /></div>
                         <div class="account-details">
                             <div class="account-name">Luax</div>
                             <div class="account-info">
@@ -51,16 +51,16 @@
                             <a href="#" class="title">Tournois</a>
                         </div>
                         <ul class="level-2">
-                            <li><img src="imgs/icons/tournois.png"> Combats</li>
-                            <li><img src="imgs/icons/champions.png"> Champions</li>
-                            <li><img src="imgs/icons/kamas.png"> Résultas</li>
+                            <li><img src="{{ URL::asset('imgs/icons/tournois.png') }}"> Combats</li>
+                            <li><img src="{{ URL::asset('imgs/icons/champions.png') }}"> Champions</li>
+                            <li><img src="{{ URL::asset('imgs/icons/kamas.png') }}"> Résultas</li>
                         </ul>
                         <div class="level-1">
                             <a href="#" class="title">Divers</a>
                         </div>
                         <ul class="level-2">
-                            <li><img src="imgs/icons/alliance.png"> Alliances versus Alliances</li>
-                            <li><img src="imgs/icons/fee.png"> Nowel</li>
+                            <li><img src="{{ URL::asset('imgs/icons/alliance.png') }}"> Alliances versus Alliances</li>
+                            <li><img src="{{ URL::asset('imgs/icons/fee.png') }}"> Nowel</li>
                         </ul>
                     </div>
                 </div>

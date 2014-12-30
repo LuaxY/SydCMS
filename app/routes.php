@@ -17,3 +17,4 @@
 });*/
 
 Route::resource('accounts', 'AccountsController');
+Route::get('register', 'AccountsController@create');

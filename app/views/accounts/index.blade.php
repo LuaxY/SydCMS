@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.page1')
 @include('menus.base')
 
 @section('content')

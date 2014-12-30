@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Sydoria - Tournois PvP</title>
-    <link rel="icon" type="image/png" href="imgs/favicon.png" />
+    <link rel="icon" type="image/png" href="{{ URL::asset('imgs/favicon.png') }}" />
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oswald" type="text/css">
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto" type="text/css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/shop.css">
+    {{ HTML::style('css/style.css') }}
+@yield('header')
 </head>
 <body>
     <div id="header">
@@ -26,29 +26,17 @@
         </div>
     </div>
 
-    <div id="carroussel">
-        <video class="video" poster="imgs/carroussel/nowel2/nowel.png" loop="loop" autoplay="">
-            <source src="imgs/carroussel/nowel2/nowel.mp4" type="video/mp4"></source>
-            <source src="imgs/carroussel/nowel2/nowel.webm" type="video/webm"></source>
-            <source src="imgs/carroussel/nowel2/nowel.ogv" type="video/ogv"></source>
+@if (empty($no_carousel))
+    <div id="carousel">
+        <video class="video" poster="{{ URL::asset('imgs/carousel/nowel2/nowel.png') }}" loop="loop" autoplay="">
+            <source src="{{ URL::asset('imgs/carousel/nowel2/nowel.mp4') }}" type="video/mp4"></source>
+            <source src="{{ URL::asset('imgs/carousel/nowel2/nowel.webm') }}" type="video/webm"></source>
+            <source src="{{ URL::asset('imgs/carousel/nowel2/nowel.ogv') }}" type="video/ogv"></source>
         </video>
     </div>
-    
-    <div class="container">
-        <div id="play">
-            <a href="#">Jouer !</a>
-        </div>
+@endif
 
-        <div id="main">
-            <div class="left">
-                @yield('menu')
-            </div> <!-- left -->
-
-            <div class="right">
-                @yield('content')
-            </div> <!-- right -->
-        </div> <!-- main-->
-    </div> <!-- container -->
+@yield('page')
 
     <div id="footer">
         <div class="container">
@@ -86,7 +74,8 @@
         <div class="container copyright">
             <a href="">Sydoria</a> &copy; 2015. Tous droits réservés. <a href="">Conditions d'utilisation</a> - <a href="">Conditions Générales de Vente</a>
         </div>
-        <div class="pegi"><img src="imgs/picto_prevention.png" /></div>
+        <div class="pegi"><img src="{{ URL::asset('imgs/picto_prevention.png') }}" /></div>
     </div>
+    @yield('footer')
 </body>
 </html>
