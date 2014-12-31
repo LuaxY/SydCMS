@@ -41,10 +41,23 @@ class AccountsController extends \BaseController {
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
 
-		/*Account::create($data);
+		$new_account = array(
+			'Login'               => $data['username'],
+			'PasswordHash'        => md5($data['password']),
+			'Nickname'            => $data['username'],
+			'Role'                => 1,
+			'Ticket'              => $this->GenTicket(),
+			'SecretQuestion'     => '2 + 2',
+			'SecretAnswer'        => '4',
+			'Lang'                => 'fr',
+			'Email'               => $data['email'],
+			'CreationDate'        => date('Y-m-d H:i:s'),
+			'SubscriptionEnd' => '0001-01-01 00:00:00',
+		);
 
-		return Redirect::route('accounts.index');*/
-		die("done");
+		Account::create($new_account);
+
+		return Redirect::route('accounts.index');
 	}
 
 	/**
@@ -93,6 +106,49 @@ class AccountsController extends \BaseController {
 		$account->update($data);
 
 		return Redirect::route('accounts.index');*/
+	}
+
+	public function login()
+	{
+		$data = Input::all();
+		var_dump($data);
+
+		$user = Account::where('Login', $data['username'])->first();
+
+		if ($user && $user->PasswordHash == md5($data['password']))
+		{
+			Auth::login($user);
+			//return Redirect::intended('dashboard');
+			return Redirect::to('/');
+		}
+		else
+		{
+			return Redirect::back()->withErrors(array('auth' => 'Nom de compte ou mot de passe incorrect.'))->withInput();
+		}
+	}
+
+	public function logout()
+	{
+		if (Auth::check())
+		{
+			Auth::logout();
+		}
+
+		return Redirect::to('/');
+	}
+
+	private function GenTicket()
+	{
+		$chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+		$len = strlen($chars);
+		$ticket = '';
+
+		for ($i = 0; $i < 32; $i++)
+		{
+			$ticket .= $chars[rand(0, $len - 1)];
+		}
+
+		return $ticket;
 	}
 
 }

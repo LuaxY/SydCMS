@@ -16,5 +16,10 @@
 	return View::make('hello');
 });*/
 
+Route::any('/', 'AccountsController@index');
+
 Route::resource('accounts', 'AccountsController');
+
 Route::get('register', 'AccountsController@create');
+Route::post('auth/login', 'AccountsController@login');
+Route::get('auth/logout', 'AccountsController@logout');
