@@ -1,7 +1,14 @@
+@extends('layouts.page1')
+@include('menus.base')
+
+@section('header')
+    {{ HTML::style('css/shop.css') }}
+@stop
+
+@section('content')
                 <div class="content">
                     <h1 class="content-title">
-                        <span class="icon-big sprite sprite-news"></span> Champions
-                        <span class="subtitle"><span>Info</span> - 29/11/2014 - 18h00</span>
+                        <span class="icon-big icon-shop"></span> Achat de points
                     </h1>
 
                     <div class="shop">
@@ -69,3 +76,4 @@
                         </div>
                     </div>
                 </div>
+@stop

@@ -3,7 +3,7 @@
 @if (Auth::guest())
                 <div class="panel blue">
                     <div class="panel-title">
-                        <span class="icon-med sprite sprite-chacha"></span>Connexion
+                        <span class="icon-medplus icon-pets"></span>Connexion
                     </div>
                     <div class="panel-content login">
                         {{ Form::open(array('action' => 'AccountsController@login')) }}
@@ -18,6 +18,10 @@
                         </div>
                         <div class="block-submit">
                             <input id="login" class="btn-medium" type="submit" value="Connexion" />
+                            <div class="menu-lost-login">
+                                <a href="{{ URL::to('register') }}">S'inscrire</a><br />
+                                <a href="{{ URL::to('/') }}">Mot de passe oublié</a>
+                            </div>
                         </div>
                         {{ Form::close() }}
                     </div>
@@ -25,7 +29,7 @@
 @else
                 <div class="panel blue">
                     <div class="panel-title">
-                        <span class="icon-med sprite sprite-chacha"></span>Mon compte
+                        <span class="icon-medplus icon-pets"></span>Mon compte
                     </div>
                     <div class="panel-content account">
                         <div class="account-avatar"><img src="{{ URL::asset('imgs/avatar/94.png') }}" /></div>
@@ -47,7 +51,7 @@
 @endif
                 <div class="panel">
                     <div class="panel-title">
-                        <span class="icon-med sprite sprite-champion"></span>Événements
+                        <span class="icon-med icon-ladder-success"></span>Événements
                     </div>
                     <div class="panel-content">
                         <div class="level-1">
@@ -70,7 +74,7 @@
 
                 <div class="panel">
                     <div class="panel-title">
-                        <span class="icon-med sprite sprite-shop"></span>Boutique
+                        <span class="icon-med icon-shop"></span>Boutique
                     </div>
                     <div class="panel-content">
                         <div class="level-1">
