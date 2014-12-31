@@ -14,7 +14,7 @@
                 <div>Tous les chemins mènent au monde des douze...</div>
                 <div>sauf celui-là !</div>
             </div>
-            <a class="p404-back" href="/">Aller à l'accueil</a>
+            <a class="p404-back" href="{{ URL::to('/') }}">Aller à l'accueil</a>
         </div>
     </div>
 @stop
