@@ -10,11 +10,11 @@
                         @if($errors->has('auth')) <span class="input-error" style="font-weight: 400; font-size: 12px;">{{$errors->first('auth')}}</span> @endif
                         <div class="form-group">
                             <label for="username">Nom de compte</label>
-                            <input id="username" type="text" autocorrect="off" autocapitalize="off" placeholder="Nom de compte" name="username" />
+                            <input id="username" type="text" autocorrect="off" autocapitalize="off" placeholder="Nom de compte" name="username" value="{{ Input::old('username') }}" @if ($errors->has('auth')) class="has-error" @endif />
                         </div>
                         <div class="form-group">
                             <label for="password">Mot de passe</label>
-                            <input id="password" type="password" placeholder="Mot de passe" name="password" />
+                            <input id="password" type="password" placeholder="Mot de passe" name="password" @if ($errors->has('auth')) class="has-error" @endif />
                         </div>
                         <div class="block-submit">
                             <input id="login" class="btn-medium" type="submit" value="Connexion" />
