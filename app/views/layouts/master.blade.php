@@ -15,12 +15,12 @@
             <div id="logo"></div>
             <div id="menu">
                 <ul>
-                    <li>Sydoria</li>
-                    <li>Rejoindre</li>
-                    <li>Serveur</li>
-                    <li>Tournois</li>
-                    <li>Forum</li>
-                    <li>Support</li>
+                    <li><a href="{{ URL::to('/') }}">Sydoria</a></li>
+                    <li><a href="{{ URL::to('register') }}">Rejoindre</a></li>
+                    <li><a href="{{ URL::to('404') }}">Serveur</a></li>
+                    <li><a href="{{ URL::to('404') }}">Tournois</a></li>
+                    <li><a href="https://forum.sydoria.fr/">Forum</a></li>
+                    <li><a href="{{ URL::to('404') }}">Support</a></li>
                 </ul>
             </div>
         </div>

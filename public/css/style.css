@@ -191,6 +191,15 @@ button {
     text-align: center;
 }
 
+#header #menu a {
+    color: #fff;
+}
+
+#header #menu a:hover {
+    text-decoration: none;
+    color: #07FEEC;
+}
+
 /*-----------------------------------------------*/
 /*-------------------CAROUSEL--------------------*/
 /*-----------------------------------------------*/
