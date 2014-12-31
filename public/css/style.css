@@ -67,75 +67,6 @@ button {
 }
 
 /*-----------------------------------------------*/
-/*--------------------PICTO----------------------*/
-/*-----------------------------------------------*/
-
-.picto {
-    background: url("../imgs/sprite_common.png");
-    background-repeat: no-repeat;
-}
-
-.sprite {
-    background-image: url("../imgs/sprite.png");
-    background-repeat: no-repeat;
-    display: block;
-    float: left;
-}
-
-.money {
-    background-image: url("../imgs/money.png");
-    background-repeat: no-repeat;
-    display: inline-block;
-    vertical-align: middle;
-}
-
-.icon-small {
-    background-size: 22px auto;
-    width: 18px;
-    height: 18px;
-}
-
-.icon-med {
-    background-size: 46px auto;
-    width: 46px;
-    height: 46px;
-}
-
-.icon-big {
-    background-size: 65px auto;
-    width: 65px;
-    height: 65px;
-}
-
-.sprite-forum {
-    background-position: 0px -546px;
-}
-
-.sprite-champion {
-    background-position: 0px -1086px;
-}
-
-.sprite-shop {
-    background-position: 0px -2053px;
-}
-
-.sprite-news {
-    background-position: 0px -1625px;
-}
-
-.sprite-chacha {
-    background-position: 0px -2606px;
-}
-
-.money-ogrines {
-    background-position: 0px -6px;
-}
-
-.money-kamas {
-    background-position: 0px -6px;
-}
-
-/*-----------------------------------------------*/
 /*-------------------HEADER----------------------*/
 /*-----------------------------------------------*/
 
@@ -303,7 +234,7 @@ button {
     border-bottom: 1px solid;
     margin: 0;
     text-shadow: 0px 2px 2px #888;
-    min-height: 60px;
+    min-height: 64px;
 }
 
 .content .content-title .subtitle {
@@ -321,7 +252,7 @@ button {
 }
 
 .content .content-title .icon-big {
-    margin: -11px 20px 0 0;
+    margin: -8px 20px 0 0;
 }
 
 /*-----------------------------------------------*/
@@ -353,7 +284,8 @@ button {
     text-shadow: 0px 2px 2px #888;
 }
 
-.panel .panel-title .icon-med {
+.panel .panel-title .icon-med,
+.panel .panel-title .icon-medplus {
     margin: -8px 20px 0 4px;
 }
 
@@ -613,7 +545,23 @@ button {
 }
 
 .block-submit {
-    text-align: center;
+    /*text-align: center;*/
+}
+
+.menu-lost-login {
+    font-size: 12px;
+    margin-top: 12px;
+    float: right;
+    text-align: right;
+}
+
+.menu-lost-login a {
+    color: #fff;
+}
+
+.menu-lost-login a:hover {
+    color: #07FEEC;
+    text-decoration: none;
 }
 
 .btn-medium,
@@ -691,11 +639,20 @@ button {
 
 #footer .menu li {
     font-size: 13px;
-    color:#818181;
+    color: #818181;
     cursor: pointer;
     transition: all ease 0.25s;
     text-transform: uppercase;
     padding: 2px 0;
+}
+
+#footer .menu li a {
+    color: #818181;
+}
+
+#footer .menu li a:hover {
+    color: #FFF;
+    text-decoration: none;
 }
 
 #footer .menu li:first-child {
