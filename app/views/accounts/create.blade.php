@@ -32,13 +32,13 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="password">Mot de passe*</label>
-                                    <input id="password" type="password" placeholder="Mot de passe" name="password" @if ($errors->has('password')) class="has-error" @endif />
+                                    <input id="password" type="password" placeholder="Mot de passe" name="password" value="{{ Input::old('password') }}" @if ($errors->has('password')) class="has-error" @endif />
                                     <div id="passwordpower"></div>
                                     @if ($errors->has('password')) <span class="input-error">{{ $errors->first('password') }}</span> @endif
                                 </div>
                                 <div class="form-group">
                                     <label for="password_confirm">Confirmation*</label>
-                                    <input id="password_confirm" type="password" placeholder="Confirmation" name="password_confirm" @if ($errors->has('password_confirm')) class="has-error" @endif />
+                                    <input id="password_confirm" type="password" placeholder="Confirmation" name="password_confirm" value="{{ Input::old('password_confirm') }}" @if ($errors->has('password_confirm')) class="has-error" @endif />
                                     @if ($errors->has('password_confirm')) <span class="input-error">{{ $errors->first('password_confirm') }}</span> @endif
                                 </div>
                                 <div class="form-group">
