@@ -27,4 +27,5 @@ Route::get('auth/logout', 'AccountsController@logout');
 
 /* SHOP */
 
-Route::get('shop', 'ShopController@index');
+Route::get('shop', array('before' => 'auth', 'uses' => 'ShopController@index'));
+Route::get('shop/country/{country?}', array('before' => 'auth', 'uses' => 'ShopController@country'));

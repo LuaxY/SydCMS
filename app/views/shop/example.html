@@ -1,0 +1,33 @@
+<label>
+    <div class="shop-element">
+        <input type="radio" name="payment" value="audiotel" />
+        <span class="shop-element-description">
+        <span class="shop-icon"><img src="{{ URL::asset('imgs/shop/payment/audiotel.png') }}" /></span>
+        <span class="shop-name">Code Audiotel : <span>1 code</span></span>
+        </span>
+    </div>
+</label>
+
+<label>
+    <div class="shop-element promo">
+    <input type="radio" name="payment" value="sms" />
+        <span class="shop-element-description">
+            <span class="shop-icon"><img src="{{ URL::asset('imgs/shop/payment/sms.png') }}" /></span>
+            <span class="shop-name">Code SMS : <span>1 code</span></span>
+        </span>
+        <div class="shop-promo">
+            <span class="promo-title">Promo</span>
+            <span class="promo-desc">+ 100 points boutique offerts pour un achat par SMS</span>
+        </div>
+    </div>
+</label>
+
+<label>
+    <div class="shop-element unavailable">
+        <input type="radio" name="payment" value="paypal" disabled="disabled" />
+        <span class="shop-description">
+            <span class="shop-icon"><img src="{{ URL::asset('imgs/shop/payment/paypal.png') }}" /></span>
+            <span class="shop-name">PayPal : <span>2,00 &euro;</span></span>
+        </span>
+    </div>
+</label>

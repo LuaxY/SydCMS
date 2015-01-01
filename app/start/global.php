@@ -83,6 +83,18 @@ App::missing(function($exception)
 
 /*
 |--------------------------------------------------------------------------
+| Shared variables in view
+|--------------------------------------------------------------------------
+|
+| List of shared variables in all views
+|
+*/
+
+View::share('server_name', Config::get('dofus.server_name'));
+View::share('points', Config::get('dofus.points'));
+
+/*
+|--------------------------------------------------------------------------
 | Require The Filters File
 |--------------------------------------------------------------------------
 |
