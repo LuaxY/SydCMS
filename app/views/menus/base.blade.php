@@ -20,7 +20,7 @@
                             <input id="login" class="btn-medium" type="submit" value="Connexion" />
                             <div class="menu-lost-login">
                                 <a href="{{ URL::to('register') }}">S'inscrire</a><br />
-                                <a href="{{ URL::to('/') }}">Mot de passe oublié</a>
+                                <a href="{{ URL::to('password-lost') }}">Mot de passe oublié</a>
                             </div>
                         </div>
                         {{ Form::close() }}
@@ -36,15 +36,15 @@
                         <div class="account-details">
                             <div class="account-name">{{ Auth::user()->Nickname }}</div>
                             <div class="account-info">
-                                <a href="">Modifier mon compte</a>
-                                <div style="margin-top: 10px;">
-                                    Ogrines: 0 <span class="icon-small money money-ogrines"></span><br />
-                                    <a href=""><i>Acheter des ogrines</i></a>
+                                <a href="{{ URL::to('myaccount') }}">Modifier mon compte</a>
+                                <div style="margin-top: 5px;">
+                                    Ogrines: 0<span class="icon-small icon-ogrines"></span><br />
+                                    <a href="{{ URL::action('ShopController@index') }}"><i>Acheter des ogrines</i></a>
                                 </div>
                             </div>
                         </div>
                         <div class="logout">
-                            <a href="{{ URL::action('AccountsController@logout') }}">Déconnexion<a>
+                            <a href="{{ URL::action('AccountsController@logout') }}">Déconnexion</a>
                             </div>
                         </div>
                     </div>

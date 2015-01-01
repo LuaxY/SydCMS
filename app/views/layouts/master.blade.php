@@ -18,8 +18,8 @@
                 <ul>
                     <li><a href="{{ URL::to('/') }}">Sydoria</a></li>
                     <li><a href="{{ URL::to('register') }}">Rejoindre</a></li>
-                    <li><a href="{{ URL::to('/') }}">Serveur</a></li>
-                    <li><a href="{{ URL::to('/') }}">Tournois</a></li>
+                    <li><a href="{{ URL::to('server') }}">Serveur</a></li>
+                    <li><a href="{{ URL::to('events') }}">Tournois</a></li>
                     <li><a href="http://forum.sydoria.fr/">Forum</a></li>
                     <li><a href="{{ URL::to('/') }}">Support</a></li>
                 </ul>
@@ -30,9 +30,9 @@
 @if (empty($no_carousel))
     <div id="carousel">
         <video class="video" poster="{{ URL::asset('imgs/carousel/nowel2/nowel.png') }}" loop="loop" autoplay="">
-            <source src="{{ URL::asset('imgs/carousel/nowel2/nowel.mp4') }}" type="video/mp4"></source>
-            <source src="{{ URL::asset('imgs/carousel/nowel2/nowel.webm') }}" type="video/webm"></source>
-            <source src="{{ URL::asset('imgs/carousel/nowel2/nowel.ogv') }}" type="video/ogv"></source>
+            <source src="{{ URL::asset('imgs/carousel/nowel2/nowel.mp4') }}" type="video/mp4">
+            <source src="{{ URL::asset('imgs/carousel/nowel2/nowel.webm') }}" type="video/webm">
+            <source src="{{ URL::asset('imgs/carousel/nowel2/nowel.ogv') }}" type="video/ogv">
         </video>
     </div>
 @endif
@@ -45,24 +45,24 @@
             <div class="menu">
                 <ul>
                     <li>Sydoria</li>
-                    <li><a href="{{ URL::to('/') }}">Actualités</a></li>
+                    <li><a href="{{ URL::to('news') }}">Actualités</a></li>
                     <li><a href="{{ URL::to('register') }}">Télécharger</a></li>
                     <li><a href="{{ URL::to('register') }}">Créer un compte</a></li>
-                    <li><a href="{{ URL::to('/') }}">Mot de passe oublié ?</a></li>
+                    <li><a href="{{ URL::to('password-lost') }}">Mot de passe oublié ?</a></li>
                 </ul>
                 <ul>
                     <li>Server</li>
-                    <li><a href="{{ URL::to('/') }}">Infos serveur</a></li>
-                    <li><a href="{{ URL::to('/') }}">Évenemtns</a></li>
-                    <li><a href="{{ URL::to('/') }}">Calssement</a></li>
-                    <li><a href="{{ URL::to('/') }}">Cadeaux</a></li>
+                    <li><a href="{{ URL::to('server/list') }}">Infos serveurs</a></li>
+                    <li><a href="{{ URL::to('events') }}">Évenemtns</a></li>
+                    <li><a href="{{ URL::to('ladder') }}">Calssement</a></li>
+                    <li><a href="{{ URL::to('gifts') }}">Cadeaux</a></li>
                 </ul>
                 <ul>
                     <li>Tournois</li>
-                    <li><a href="{{ URL::to('/') }}">Combats</a></li>
-                    <li><a href="{{ URL::to('/') }}">Champion</a></li>
-                    <li><a href="{{ URL::to('/') }}">Résultats</a></li>
-                    <li><a href="{{ URL::to('/') }}">Récompenses</a></li>
+                    <li><a href="{{ URL::to('pvp/fights') }}">Combats</a></li>
+                    <li><a href="{{ URL::to('pvp/champions') }}">Champion</a></li>
+                    <li><a href="{{ URL::to('pvp/result') }}">Résultats</a></li>
+                    <li><a href="{{ URL::to('pvp/reward') }}">Récompenses</a></li>
                 </ul>
                 <ul>
                     <li>Support</li>
@@ -74,7 +74,7 @@
             </div>
         </div>
         <div class="container copyright">
-            <a href="">Sydoria</a> &copy; 2015. Tous droits réservés. <a href="">Conditions d'utilisation</a> - <a href="">Conditions Générales de Vente</a>
+            <a href="">Sydoria</a> &copy; 2015. Tous droits réservés. <a href="{{ URL::to('legal/cu') }}">Conditions d'utilisation</a> - <a href="{{ URL::to('legal/cgv') }}">Conditions Générales de Vente</a>
         </div>
         <div class="pegi"><img src="{{ URL::asset('imgs/picto_prevention.png') }}" /></div>
     </div>
