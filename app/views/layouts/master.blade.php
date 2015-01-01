@@ -17,7 +17,7 @@
             <div id="menu">
                 <ul>
                     <li><a href="{{ URL::to('/') }}">{{ $server_name }}</a></li>
-                    <li><a href="{{ URL::to('register') }}">Rejoindre</a></li>
+                    <li><a href="{{ URL::route('register') }}">Rejoindre</a></li>
                     <li><a href="{{ URL::to('server') }}">Serveur</a></li>
                     <li><a href="{{ URL::to('events') }}">Tournois</a></li>
                     <li><a href="http://forum.sydoria.fr/">Forum</a></li>
@@ -46,8 +46,8 @@
                 <ul>
                     <li>{{ $server_name }}</li>
                     <li><a href="{{ URL::to('news') }}">Actualités</a></li>
-                    <li><a href="{{ URL::to('register') }}">Télécharger</a></li>
-                    <li><a href="{{ URL::to('register') }}">Créer un compte</a></li>
+                    <li><a href="{{ URL::route('register') }}">Télécharger</a></li>
+                    <li><a href="{{ URL::route('register') }}">Créer un compte</a></li>
                     <li><a href="{{ URL::to('password-lost') }}">Mot de passe oublié ?</a></li>
                 </ul>
                 <ul>

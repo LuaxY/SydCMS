@@ -21,11 +21,33 @@ Route::any('/', 'AccountsController@index');
 /* ACCOUNTS */
 
 Route::resource('accounts', 'AccountsController');
-Route::get('register', 'AccountsController@create');
-Route::post('auth/login', 'AccountsController@login');
-Route::get('auth/logout', 'AccountsController@logout');
+Route::get('register', array(
+	'uses' => 'AccountsController@create',
+	'as'   => 'register'
+));
+Route::post('auth/login', array(
+	'uses' => 'AccountsController@login',
+	'as'   => 'login'
+));
+Route::get('auth/logout', array(
+	'uses' => 'AccountsController@logout',
+	'as'   => 'logout'
+));
 
 /* SHOP */
 
-Route::get('shop', array('before' => 'auth', 'uses' => 'ShopController@index'));
-Route::get('shop/country/{country?}', array('before' => 'auth', 'uses' => 'ShopController@country'));
+Route::get('shop/choose-country', array(
+	'before' => 'auth',
+	'uses'   => 'PaymentController@country',
+	'as'     => 'shop.payment.country'
+));
+Route::get('shop/choose-method/{country?}', array(
+	'before' => 'auth',
+	'uses'   => 'PaymentController@method',
+	'as'     => 'shop.payment.method'
+));
+Route::post('shop/process', array(
+	'before' => 'auth',
+	'uses'   => 'PaymentController@process',
+	'as'     => 'shop.payment.process'
+));

@@ -6,7 +6,7 @@
                         <span class="icon-medplus icon-pets"></span>Connexion
                     </div>
                     <div class="panel-content login">
-                        {{ Form::open(array('action' => 'AccountsController@login')) }}
+                        {{ Form::open(array('route' => 'login')) }}
                         @if($errors->has('auth')) <span class="input-error" style="font-weight: 400; font-size: 12px;">{{$errors->first('auth')}}</span> @endif
                         <div class="form-group">
                             <label for="username">Nom de compte</label>
@@ -19,7 +19,7 @@
                         <div class="block-submit">
                             <input id="login" class="btn-medium" type="submit" value="Connexion" />
                             <div class="menu-lost-login">
-                                <a href="{{ URL::to('register') }}">S'inscrire</a><br />
+                                <a href="{{ URL::route('register') }}">S'inscrire</a><br />
                                 <a href="{{ URL::to('password-lost') }}">Mot de passe oublié</a>
                             </div>
                         </div>
@@ -38,13 +38,13 @@
                             <div class="account-info">
                                 <a href="{{ URL::to('myaccount') }}">Modifier mon compte</a>
                                 <div style="margin-top: 5px;">
-                                    Ogrines: 0<span class="icon-small icon-ogrines"></span><br />
-                                    <a href="{{ URL::action('ShopController@index') }}"><i>Acheter des ogrines</i></a>
+                                    Ogrines: {{ Auth::user()->Tokens }}<span class="icon-small icon-ogrines"></span><br />
+                                    <a href="{{ URL::route('shop.payment.country') }}"><i>Acheter des ogrines</i></a>
                                 </div>
                             </div>
                         </div>
                         <div class="logout">
-                            <a href="{{ URL::action('AccountsController@logout') }}">Déconnexion</a>
+                            <a href="{{ URL::route('logout') }}">Déconnexion</a>
                             </div>
                         </div>
                     </div>
