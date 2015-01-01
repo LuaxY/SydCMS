@@ -18,7 +18,7 @@
             </div>
             <div class="shop-country">
 @foreach ($starpass as $country => $data)
-                <a href="{{ URL::to('shop/country/' . $country) }}"><span class="icon-flag flag-{{ $country }}"></span></a>
+                <a href="{{ URL::route('shop.payment.method', $country) }}"><span class="icon-flag flag-{{ $country }}"></span></a>
 @endforeach
             </div>
         </div>

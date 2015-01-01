@@ -111,7 +111,7 @@ return array(
         //"password" => "Mot de passe",
         "password_confirmation" => "Confirmation du mot de passe",
         "city" => "Ville",
-        "country" => "Pays",
+        //"country" => "Pays",
         "address" => "Adresse",
         "phone" => "Téléphone",
         "mobile" => "Portable",
@@ -139,6 +139,9 @@ return array(
         "password_confirm" => "confirmation",
         "g-recaptcha-response" => "code de sécurité",
         "cg" => "conditions générales",
+        "country" => "pays",
+        "method" => "methode",
+        "cgv" => "conditions générales de vente",
     ),
 
 );
