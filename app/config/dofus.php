@@ -8,4 +8,10 @@ return array (
     // Base points in shop
     'points' => 100,
 
+    // Starpass IDs
+    'starpass' => array(
+        'idp' => 137990,
+        'idd' => 267767,
+    ),
+
 );
