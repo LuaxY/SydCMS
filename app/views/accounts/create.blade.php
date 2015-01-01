@@ -71,7 +71,7 @@
                         <div class="block-header">
                             <div class="title">
                                 <span>2</span>
-                                Téléchargez Sydoria
+                                Téléchargez {{ $server_name }}
                             </div>
                             <div class="text">
                                 Tofus, wabbits, bouftous, héros, donjons, quêtes et dragons :<br />

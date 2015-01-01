@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Sydoria - Tournois PvP</title>
+    <title>{{ $server_name }} - Tournois PvP</title>
     <link rel="icon" type="image/png" href="{{ URL::asset('imgs/favicon.png') }}" />
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oswald" type="text/css">
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto" type="text/css">
@@ -16,7 +16,7 @@
             <div id="logo"></div>
             <div id="menu">
                 <ul>
-                    <li><a href="{{ URL::to('/') }}">Sydoria</a></li>
+                    <li><a href="{{ URL::to('/') }}">{{ $server_name }}</a></li>
                     <li><a href="{{ URL::to('register') }}">Rejoindre</a></li>
                     <li><a href="{{ URL::to('server') }}">Serveur</a></li>
                     <li><a href="{{ URL::to('events') }}">Tournois</a></li>
@@ -44,14 +44,14 @@
             <div class="logo"></div>
             <div class="menu">
                 <ul>
-                    <li>Sydoria</li>
+                    <li>{{ $server_name }}</li>
                     <li><a href="{{ URL::to('news') }}">Actualités</a></li>
                     <li><a href="{{ URL::to('register') }}">Télécharger</a></li>
                     <li><a href="{{ URL::to('register') }}">Créer un compte</a></li>
                     <li><a href="{{ URL::to('password-lost') }}">Mot de passe oublié ?</a></li>
                 </ul>
                 <ul>
-                    <li>Server</li>
+                    <li>Serveur</li>
                     <li><a href="{{ URL::to('server/list') }}">Infos serveurs</a></li>
                     <li><a href="{{ URL::to('events') }}">Évenemtns</a></li>
                     <li><a href="{{ URL::to('ladder') }}">Calssement</a></li>
@@ -74,7 +74,7 @@
             </div>
         </div>
         <div class="container copyright">
-            <a href="">Sydoria</a> &copy; 2015. Tous droits réservés. <a href="{{ URL::to('legal/cu') }}">Conditions d'utilisation</a> - <a href="{{ URL::to('legal/cgv') }}">Conditions Générales de Vente</a>
+            <a href="">{{ $server_name }}</a> &copy; {{ date('Y') }}. Tous droits réservés. <a href="{{ URL::to('legal/cu') }}">Conditions d'utilisation</a> - <a href="{{ URL::to('legal/cgv') }}">Conditions Générales de Vente</a>
         </div>
         <div class="pegi"><img src="{{ URL::asset('imgs/picto_prevention.png') }}" /></div>
     </div>
