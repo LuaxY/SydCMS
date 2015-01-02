@@ -36,7 +36,7 @@ class PaymentController extends \BaseController {
 		$validator = Validator::make($data,
 			array(
 				'country' => 'required|size:2',
-				'method'  => 'required|in:sms,audiotel',
+				'method'  => 'required|in:sms,audiotel,mobilecall',
 				'cgv'     => 'required',
 			)
 		);
@@ -46,7 +46,7 @@ class PaymentController extends \BaseController {
 			return Redirect::back()->withErrors($validator);
 		}
 
-		$starpass = $this->starpass->fr->$data['method'];
+		$starpass = $this->starpass->fr->audiotel;
 		$country = 'fr';
 
 		if (isset($this->starpass->$data['country']->$data['method']))

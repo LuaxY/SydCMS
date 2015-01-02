@@ -36,17 +36,17 @@ Route::get('auth/logout', array(
 
 /* SHOP */
 
-Route::get('shop/choose-country', array(
+Route::get('shop/payment/choose-country', array(
 	'before' => 'auth',
 	'uses'   => 'PaymentController@country',
 	'as'     => 'shop.payment.country'
 ));
-Route::get('shop/choose-method/{country?}', array(
+Route::get('shop/payment/{country?}/choose-method', array(
 	'before' => 'auth',
 	'uses'   => 'PaymentController@method',
 	'as'     => 'shop.payment.method'
 ));
-Route::post('shop/process', array(
+Route::post('shop/payment/process', array(
 	'before' => 'auth',
 	'uses'   => 'PaymentController@process',
 	'as'     => 'shop.payment.process'

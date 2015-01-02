@@ -23,9 +23,15 @@
                                     <div class="shop-element">
                                         <input type="radio" name="method" value="{{ $method }}" />
                                         <span class="shop-element-description">
-                                        <span class="shop-icon"><img src="{{ URL::asset('imgs/shop/payment/' . $method . '.png') }}" /></span>
-                                        <span class="shop-name">Code {{ $method }} : <span>1 code</span></span>
+                                            <span class="shop-icon"><img src="{{ URL::asset('imgs/shop/payment/' . $method . '.png') }}" /></span>
+                                            <span class="shop-name">Code {{ $method }} : <span>1 code</span></span>
                                         </span>
+@if ( ($method == 'sms' && $country == 'fr') || ($method == 'audiotel' && $country == 'fd') || ($method == 'audiotel' && $country == 'ca') || ($method == 'mobilecall' && $country == 'ca') )
+                                        <div class="shop-promo">
+                                            <span class="promo-title">Promo</span>
+                                            <span class="promo-desc">+ 20 ogrines offerts pour un achat par {{ $method }}</span>
+                                        </div>
+@endif
                                     </div>
                                 </label>
 @endforeach

@@ -145,3 +145,76 @@
     margin: 5px;
     float: left;
 }
+
+.shop .payment {
+    overflow: auto;
+}
+
+.shop .payment-number {
+    font-size: 23px;
+    line-height: 40px;
+    margin-bottom: 20px;
+}
+
+.shop .payment-code {
+    color: #66614E;
+    margin-top: 10px;
+}
+
+.shop .payment-code input[type="text"] {
+    margin-left: 30px;
+    width: 170px;
+    height: 40px;
+}
+
+.shop .payment-submit {
+    text-align: center;
+}
+
+.shop .payment-submit {
+    margin-top: 10px;
+}
+
+.shop .payment-submit input[type="submit"] {
+    font-size: 23px;
+    line-height: 22px;
+    padding: 12px 34px;
+    display: inline-block;
+    font-family: 'Bebas Neue', sans-serif;
+    border-radius: 0px;
+    text-transform: uppercase;
+    font-weight: 400;
+    text-align: center;
+    cursor: pointer;
+    border: medium none;
+    background-color: #11a0f2;
+    color: #FFF;
+    text-shadow: 0px 1px 1px #333;
+}
+
+.shop .payment-submit input[type="submit"]:hover {
+    background-color: #11cbf2;
+}
+
+.shop .payment-steps {
+    margin-top: 30px;
+}
+
+.shop .payment-steps ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.shop .payment-steps ul li {
+    padding: 5px;
+}
+
+.shop .payment-steps span.step {
+    margin-right: 10px;
+}
+
+.shop .payment-steps p.legal {
+    color: #777;
+    font-size: 85%;
+    text-align: left;
+}

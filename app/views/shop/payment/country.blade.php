@@ -6,22 +6,22 @@
 @stop
 
 @section('content')
-<div class="content">
-    <h1 class="content-title">
-        <span class="icon-big icon-shop"></span> Achat d'ogrines
-    </h1>
+                <div class="content">
+                    <h1 class="content-title">
+                        <span class="icon-big icon-shop"></span> Achat d'ogrines
+                    </h1>
 
-    <div class="shop">
-        <div class="shop-content">
-            <div class="shop-title">
-                <span class="picto"></span> Choisissez votre pays
-            </div>
-            <div class="shop-country">
+                    <div class="shop">
+                        <div class="shop-content">
+                            <div class="shop-title">
+                                <span class="picto"></span> Choisissez votre pays
+                            </div>
+                            <div class="shop-country">
 @foreach ($starpass as $country => $data)
-                <a href="{{ URL::route('shop.payment.method', $country) }}"><span class="icon-flag flag-{{ $country }}"></span></a>
+                                <a href="{{ URL::route('shop.payment.method', $country) }}" title="{{ $country }}"><span class="icon-flag flag-{{ $country }}"></span></a>
 @endforeach
-            </div>
-        </div>
-    </div> <!-- shop -->
-</div> <!-- content -->
+                            </div>
+                        </div>
+                    </div> <!-- shop -->
+                </div> <!-- content -->
 @stop
