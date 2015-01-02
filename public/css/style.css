@@ -59,6 +59,17 @@ button {
     opacity: .4;
 }
 
+.hr {
+    border-right: 0px none;
+    border-width: 1px 0px 0px;
+    border-style: solid none none;
+    border-color: #C9C6BB;
+    border-image: none;
+    height: 0px;
+    margin: 20px 0;
+    display: block;
+}
+
 @font-face {
     font-family: 'Bebas Neue';
     font-style: normal;
@@ -104,9 +115,11 @@ button {
 
 #header #logo {
     float: left;
-    width: 181px;
-    height: 117px;
-    background: url("../imgs/logo.png") no-repeat;
+    /*width: 181px;
+    height: 117px;*/
+    width: 180px;
+    height: 129px;
+    background: url("../imgs/logo2.png") no-repeat;
     z-index: 1500 !important;
     position: relative;
 }
@@ -604,7 +617,7 @@ button {
     border-top: 1px solid #02AFFF;
     background-color: #070707;
     width: 100%;
-    height: 230px;
+    height: 235px;
 }
 
 #footer .container {
@@ -613,9 +626,11 @@ button {
 
 #footer .logo {
     float: left;
-    width: 181px;
-    height: 117px;
-    background: url("../imgs/logo.png") no-repeat;
+    /*width: 181px;
+    height: 117px;*/
+    width: 180px;
+    height: 129px;
+    background: url("../imgs/logo2.png") no-repeat;
 }
 
 #footer .menu {
