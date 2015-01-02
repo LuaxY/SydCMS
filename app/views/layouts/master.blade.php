@@ -29,10 +29,10 @@
 
 @if (empty($no_carousel))
     <div id="carousel">
-        <video class="video" poster="{{ URL::asset('imgs/carousel/nowel2/nowel.png') }}" loop="loop" autoplay="">
-            <source src="{{ URL::asset('imgs/carousel/nowel2/nowel.mp4') }}" type="video/mp4">
-            <source src="{{ URL::asset('imgs/carousel/nowel2/nowel.webm') }}" type="video/webm">
-            <source src="{{ URL::asset('imgs/carousel/nowel2/nowel.ogv') }}" type="video/ogv">
+        <video class="video" poster="{{ URL::asset('imgs/carousel/hny/hny.png') }}" loop="loop" autoplay="">
+            <source src="{{ URL::asset('imgs/carousel/hny/hny.mp4') }}" type="video/mp4">
+            <source src="{{ URL::asset('imgs/carousel/hny/hny.webm') }}" type="video/webm">
+            <source src="{{ URL::asset('imgs/carousel/hny/hny.ogv') }}" type="video/ogv">
         </video>
     </div>
 @endif
