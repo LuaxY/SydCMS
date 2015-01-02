@@ -11,43 +11,58 @@
 |
 */
 
-/*Route::get('/', function()
+$locale = Request::segment(1);
+
+if (in_array($locale, Config::get('app.available_locales')))
 {
-	return View::make('hello');
-});*/
+	App::setLocale($locale);
+}
+else
+{
+	$locale = null;
+}
 
-Route::any('/', 'AccountsController@index');
+Route::group(array('prefix' => $locale), function()
+{
 
-/* ACCOUNTS */
+	Route::any('/', array(
+		'uses' => 'AccountsController@index',
+		'as' => 'home'
+	));
 
-Route::resource('accounts', 'AccountsController');
-Route::get('register', array(
-	'uses' => 'AccountsController@create',
-	'as'   => 'register'
-));
-Route::post('auth/login', array(
-	'uses' => 'AccountsController@login',
-	'as'   => 'login'
-));
-Route::get('auth/logout', array(
-	'uses' => 'AccountsController@logout',
-	'as'   => 'logout'
-));
+	/* ACCOUNTS */
 
-/* SHOP */
+	Route::resource('accounts', 'AccountsController');
 
-Route::get('shop/payment/choose-country', array(
-	'before' => 'auth',
-	'uses'   => 'PaymentController@country',
-	'as'     => 'shop.payment.country'
-));
-Route::get('shop/payment/{country?}/choose-method', array(
-	'before' => 'auth',
-	'uses'   => 'PaymentController@method',
-	'as'     => 'shop.payment.method'
-));
-Route::post('shop/payment/process', array(
-	'before' => 'auth',
-	'uses'   => 'PaymentController@process',
-	'as'     => 'shop.payment.process'
-));
+	Route::get(Lang::get('routes.account.register'), array(
+		'uses' => 'AccountsController@create',
+		'as'   => 'register'
+	));
+	Route::post(Lang::get('routes.account.login'), array(
+		'uses' => 'AccountsController@login',
+		'as'   => 'login'
+	));
+	Route::get(Lang::get('routes.account.logout'), array(
+		'uses' => 'AccountsController@logout',
+		'as'   => 'logout'
+	));
+
+	/* SHOP */
+
+	Route::get(Lang::get('routes.shop.payment.choose-country'), array(
+		'before' => 'auth',
+		'uses'   => 'PaymentController@country',
+		'as'     => 'shop.payment.country'
+	));
+	Route::get(Lang::get('routes.shop.payment.choose-method'), array(
+		'before' => 'auth',
+		'uses'   => 'PaymentController@method',
+		'as'     => 'shop.payment.method'
+	));
+	Route::post(Lang::get('routes.shop.payment.process'), array(
+		'before' => 'auth',
+		'uses'   => 'PaymentController@process',
+		'as'     => 'shop.payment.process'
+	));
+
+});

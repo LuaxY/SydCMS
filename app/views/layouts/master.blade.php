@@ -13,10 +13,10 @@
 <body>
     <div id="header">
         <div class="container">
-            <div id="logo"></div>
+            <a href="{{ URL::route('home') }}"><div id="logo"></div></a>
             <div id="menu">
                 <ul>
-                    <li><a href="{{ URL::to('/') }}">{{ $server_name }}</a></li>
+                    <li><a href="{{ URL::route('home') }}">{{ $server_name }}</a></li>
                     <li><a href="{{ URL::route('register') }}">Rejoindre</a></li>
                     <li><a href="{{ URL::to('server') }}">Serveur</a></li>
                     <li><a href="{{ URL::to('events') }}">Tournois</a></li>

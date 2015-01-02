@@ -20,7 +20,7 @@
                             <input id="login" class="btn-medium" type="submit" value="Connexion" />
                             <div class="menu-lost-login">
                                 <a href="{{ URL::route('register') }}">S'inscrire</a><br />
-                                <a href="{{ URL::to('password-lost') }}">Mot de passe oublié</a>
+                                <a href="{{ URL::to('password/reset') }}">Mot de passe oublié</a>
                             </div>
                         </div>
                         {{ Form::close() }}
