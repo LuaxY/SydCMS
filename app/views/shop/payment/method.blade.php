@@ -12,7 +12,7 @@
                     </h1>
 
                     <div class="shop">
-                        {{ Form::open(array('route' => 'shop.payment.process')) }}
+                        {{ Form::open(array('route' => 'shop.payment.code')) }}
                             <input type="hidden" name="country" value="{{ $country }}" />
                             <div class="shop-content">
                                 <div class="shop-title">
@@ -26,10 +26,10 @@
                                             <span class="shop-icon"><img src="{{ URL::asset('imgs/shop/payment/' . $method . '.png') }}" /></span>
                                             <span class="shop-name">Code {{ $method }} : <span>1 code</span></span>
                                         </span>
-@if ( ($method == 'sms' && $country == 'fr') || ($method == 'audiotel' && $country == 'fd') || ($method == 'audiotel' && $country == 'ca') || ($method == 'mobilecall' && $country == 'ca') )
+@if ( array_key_exists($country . '|' . $method, Config::get('dofus.promos')) )
                                         <div class="shop-promo">
                                             <span class="promo-title">Promo</span>
-                                            <span class="promo-desc">+ 20 ogrines offerts pour un achat par {{ $method }}</span>
+                                            <span class="promo-desc">+ {{ Config::get('dofus.promos')[$country . '|' . $method] }} ogrines offerts pour un achat par {{ $method }}</span>
                                         </div>
 @endif
                                     </div>
