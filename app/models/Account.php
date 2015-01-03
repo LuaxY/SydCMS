@@ -29,7 +29,7 @@ class Account extends \Eloquent implements UserInterface {
 	protected $hidden = array('PasswordHash');
 
 	public static $rules = array(
-		'username'             => 'required|min:3|max:32|unique:accounts,Login',
+		'username'             => 'required|min:3|max:32|unique:accounts,Login|alpha_num',
 		'password'             => 'required|min:6',
 		'password_confirm' 	   => 'required|same:password',
 		'email'                => 'required|email|unique:accounts,Email',
