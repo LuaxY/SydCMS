@@ -22,6 +22,8 @@ return array(
 
     'shop.payment.choose-method' => 'shop/payment/{country?}/choose-method',
 
+    'shop.payment.get-code' => 'shop/payment/get-code',
+
     'shop.payment.process' => 'shop/payment/process',
 
 );

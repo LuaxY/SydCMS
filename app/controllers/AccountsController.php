@@ -41,23 +41,25 @@ class AccountsController extends \BaseController {
 			return Redirect::back()->withErrors($validator)->withInput();
 		}
 
-		$new_account = array(
-			'Login'               => $data['username'],
-			'PasswordHash'        => md5($data['password']),
-			'Nickname'            => $data['username'],
-			'Role'                => 1,
-			'Ticket'              => $this->GenTicket(),
-			'SecretQuestion'     => '2 + 2',
-			'SecretAnswer'        => '4',
-			'Lang'                => 'fr',
-			'Email'               => $data['email'],
-			'CreationDate'        => date('Y-m-d H:i:s'),
-			'SubscriptionEnd' => '0001-01-01 00:00:00',
-		);
+		$account = new Account;
 
-		Account::create($new_account);
+		$account->Login           = $data['username'];
+		$account->PasswordHash    = md5($data['password']);
+		$account->Nickname        = $data['username'];
+		$account->Role            = 1;
+		$account->Ticket          = $this->GenTicket();
+		$account->SecretQuestion  = '2 + 2';
+		$account->SecretAnswer    = '4';
+		$account->Lang            = 'fr';
+		$account->Email           = $data['email'];
+		$account->CreationDate    = date('Y-m-d H:i:s');
+		$account->SubscriptionEnd = '0001-01-01 00:00:00';
 
-		return Redirect::route('accounts.index');
+		$account->save();
+
+		Auth::login($account);
+
+		return Redirect::route('home');
 	}
 
 	/**
@@ -111,15 +113,14 @@ class AccountsController extends \BaseController {
 	public function login()
 	{
 		$data = Input::all();
-		var_dump($data);
 
 		$user = Account::where('Login', $data['username'])->first();
 
 		if ($user && $user->PasswordHash == md5($data['password']))
 		{
 			Auth::login($user);
-			//return Redirect::intended('dashboard');
-			return Redirect::to('/');
+
+			return Redirect::intended('/');
 		}
 		else
 		{

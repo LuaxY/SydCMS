@@ -35,11 +35,17 @@
                                     </div>
 @endif
                                 </div>
-                                <div class="right">
+                                <div class="right" style="text-align: right;">
                                     En cas de problème, veuillez contacter le <a href="#">support</a>
                                     <div class="payment-code form-group">
-                                        Entrez votre code : <input type="text" name="code" value="" />
-                                        <div class="payment-submit"><input type="submit" value="Valider" /></div>
+                                        {{ Form::open(array('route' => 'shop.payment.process')) }}
+                                            <input type="hidden" name="country" value="{{ $country }}" />
+                                            <input type="hidden" name="method" value="{{ $method }}" />
+                                            <input type="hidden" name="cgv" value="{{ $cgv }}" />
+                                            @if ($errors->has('code')) <div class="input-error">{{ $errors->first('code') }}</div> @endif
+                                            Entrez votre code : <input type="text" name="code" value="{{ Input::old('code') }}" @if ($errors->has('code')) class="has-error" @endif />
+                                            <div class="payment-submit"><input type="submit" value="Valider" /></div>
+                                        {{ Form::close() }}
                                     </div>
                                 </div>
                             </div>

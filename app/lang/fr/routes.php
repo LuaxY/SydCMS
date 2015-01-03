@@ -22,6 +22,8 @@ return array(
 
     'shop.payment.choose-method' => 'boutique/paiement/{country?}/choix-mode-paiement',
 
+    'shop.payment.get-code' => 'boutique/paiement/obtention-code',
+
     'shop.payment.process' => 'boutique/paiement/process',
 
 );

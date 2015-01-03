@@ -59,6 +59,11 @@ Route::group(array('prefix' => $locale), function()
 		'uses'   => 'PaymentController@method',
 		'as'     => 'shop.payment.method'
 	));
+	Route::any(Lang::get('routes.shop.payment.get-code'), array(
+		'before' => 'auth',
+		'uses'   => 'PaymentController@code',
+		'as'     => 'shop.payment.code'
+	));
 	Route::post(Lang::get('routes.shop.payment.process'), array(
 		'before' => 'auth',
 		'uses'   => 'PaymentController@process',
