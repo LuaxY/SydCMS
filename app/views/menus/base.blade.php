@@ -38,7 +38,7 @@
                             <div class="account-info">
                                 <a href="{{ URL::to('myaccount') }}">Modifier mon compte</a>
                                 <div style="margin-top: 5px;">
-                                    Ogrines: {{ Auth::user()->Tokens }}<span class="icon-small icon-ogrines"></span><br />
+                                    Ogrines: {{ Auth::user()->NewTokens }}<span class="icon-small icon-ogrines"></span><br />
                                     <a href="{{ URL::route('shop.payment.country') }}"><i>Acheter des ogrines</i></a>
                                 </div>
                             </div>
