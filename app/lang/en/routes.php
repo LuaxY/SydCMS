@@ -26,4 +26,10 @@ return array(
 
     'shop.payment.process' => 'shop/payment/process',
 
+    /** Vote **/
+
+    'vote.index' => 'vote',
+
+    'vote.process' => 'vote/process'
+
 );

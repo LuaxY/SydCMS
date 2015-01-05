@@ -18,6 +18,8 @@ class Account extends \Eloquent implements UserInterface {
 		'Email',
 		'CreationDate',
 		'SubscriptionEnd',
+		'LastVote',
+		'VoteCount',
 	);
 
 	protected $table = 'accounts';

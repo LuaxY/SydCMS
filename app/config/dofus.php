@@ -22,4 +22,10 @@ return array (
         'idd' => 267767,
     ),
 
+    // RPG Paradize Top Vote
+    'rpg-paradize' => array(
+        'id' => 101183,
+        'time' => 7205,
+    ),
+
 );

@@ -70,4 +70,17 @@ Route::group(array('prefix' => $locale), function()
 		'as'     => 'shop.payment.process'
 	));
 
+	/* VOTE */
+
+	Route::get(Lang::get('routes.vote.index'), array(
+		'before' => 'auth',
+		'uses'   => 'VoteController@index',
+		'as'     => 'vote.index'
+	));
+	Route::get(Lang::get('routes.vote.process'), array(
+		'before' => 'auth',
+		'uses'   => 'VoteController@process',
+		'as'     => 'vote.process'
+	));
+
 });
