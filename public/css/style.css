@@ -5,8 +5,10 @@ body, div {
 
 body {
     /*background: url("../imgs/backgrounds/nowel1.jpg") no-repeat scroll center top #CDD5D8;*/ /* Nowel 1 */
-    background: url("../imgs/backgrounds/nowel2.jpg") no-repeat scroll center top #0E425E; /* Nowel 2 */
+    /*background: url("../imgs/backgrounds/nowel2.jpg") no-repeat scroll center top #0E425E;*/ /* Nowel 2 */
     /*background: url("../imgs/backgrounds/eliostrope2.jpg") no-repeat scroll center top #0D1E29;*/ /* Eliotropes */
+    background: url("../imgs/backgrounds/dofus4.jpg") no-repeat scroll center top #2C3B40; /* Dofus 1 */
+
     font-size: 15px;
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
 }
@@ -117,15 +119,17 @@ button {
     float: left;
     /*width: 181px;
     height: 117px;*/
-    width: 180px;
-    height: 129px;
-    background: url("../imgs/logo2.png") no-repeat;
+    /*width: 180px;
+    height: 129px;*/
+    width: 300px;
+    height: 163px;
+    margin-top: -20px;
+    background: url("../imgs/sydoria.png") no-repeat;
     z-index: 1500 !important;
     position: relative;
 }
 
 #header #menu {
-    margin: 0;
     width: 900px;
     height: 70px;
     font-family: 'Oswald', sans-serif;
@@ -630,7 +634,8 @@ button {
     height: 117px;*/
     width: 180px;
     height: 129px;
-    background: url("../imgs/logo2.png") no-repeat;
+    background: url("../imgs/sydoria.png") no-repeat;
+    background-size: 180px 98px;
 }
 
 #footer .menu {
