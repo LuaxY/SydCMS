@@ -1,4 +1,5 @@
 *.psd
+app/config/database.php
 /bootstrap/compiled.php
 /vendor
 composer.phar
