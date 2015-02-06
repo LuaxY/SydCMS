@@ -29,11 +29,11 @@
 
 @if (empty($no_carousel))
     <div id="carousel">
-        <video class="video" poster="{{ URL::asset('imgs/carousel/dofus1/dofus1.png') }}" loop="loop" autoplay="">
+        <!--<video class="video" poster="{{ URL::asset('imgs/carousel/dofus1/dofus1.png') }}" loop="loop" autoplay="">
             <source src="{{ URL::asset('imgs/carousel/dofus1/dofus1.mp4') }}" type="video/mp4">
             <source src="{{ URL::asset('imgs/carousel/dofus1/dofus1.webm') }}" type="video/webm">
             <source src="{{ URL::asset('imgs/carousel/dofus1/dofus1.ogv') }}" type="video/ogv">
-        </video>
+        </video>-->
     </div>
 @endif
 
