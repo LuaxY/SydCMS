@@ -3,18 +3,6 @@
 class AccountsController extends \BaseController {
 
 	/**
-	 * Display a listing of accounts
-	 *
-	 * @return Response
-	 */
-	public function index()
-	{
-		$accounts = Account::all();
-
-		return View::make('accounts.index', compact('accounts'));
-	}
-
-	/**
 	 * Show the form for creating a new account
 	 *
 	 * @return Response
@@ -70,9 +58,9 @@ class AccountsController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		$account = Account::findOrFail($id);
+		/*$account = Account::findOrFail($id);
 
-		return View::make('accounts.show', compact('account'));
+		return View::make('accounts.show', compact('account'));*/
 	}
 
 	/**
