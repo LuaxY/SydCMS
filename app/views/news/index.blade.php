@@ -10,7 +10,7 @@
 @foreach ($posts as $post)
                     <div class="post {{ $post->type }}">
                         <div class="post-image">
-                            <img src="{{ URL::asset($post->image) }}" alt="{{ $post->title }}" />
+                            <a href="{{ URL::route('news.post', $post->id, "null") }}"><img src="{{ URL::asset($post->image) }}" alt="{{ $post->title }}" /></a>
                         </div>
                         <div class="post-info">
                             <div class="post-title"><a href="">{{ $post->title }}</a></div>

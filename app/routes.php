@@ -36,9 +36,9 @@ Route::group(array('prefix' => $locale), function()
 		'uses' => 'NewsController@index',
 		'as'   => 'news'
 	));
-	Route::get(Lang::get('routes.news.article'), array(
+	Route::get(Lang::get('routes.news.post'), array(
 		'uses' => 'NewsController@show',
-		'as'   => 'article'
+		'as'   => 'news.post'
 	));
 
 	/* ACCOUNTS */

@@ -12,7 +12,7 @@ return array(
 
     'news.index' => 'news',
 
-    'news.article' => 'article',
+    'news.post' => 'news/post/{id?}/{slug?}',
 
     /** Account **/
 

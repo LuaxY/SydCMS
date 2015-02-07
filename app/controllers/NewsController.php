@@ -16,73 +16,16 @@ class NewsController extends \BaseController {
 	}
 
 	/**
-	 * Show the form for creating a new resource.
-	 * GET /news/create
-	 *
-	 * @return Response
-	 */
-	public function create()
-	{
-		//
-	}
-
-	/**
-	 * Store a newly created resource in storage.
-	 * POST /news
-	 *
-	 * @return Response
-	 */
-	public function store()
-	{
-		//
-	}
-
-	/**
 	 * Display the specified resource.
 	 * GET /news/{id}
 	 *
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
+	public function show($id, $slug = null)
 	{
-		//
-	}
+		$post = Post::findOrFail($id);
 
-	/**
-	 * Show the form for editing the specified resource.
-	 * GET /news/{id}/edit
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function edit($id)
-	{
-		//
+		return View::make('news.post', compact('post'));
 	}
-
-	/**
-	 * Update the specified resource in storage.
-	 * PUT /news/{id}
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function update($id)
-	{
-		//
-	}
-
-	/**
-	 * Remove the specified resource from storage.
-	 * DELETE /news/{id}
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function destroy($id)
-	{
-		//
-	}
-
 }

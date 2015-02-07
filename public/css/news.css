@@ -6,6 +6,16 @@
     float: left;
     width: 423px;
     margin: 0 6px 12px 6px;
+    background-color: #F3F2ED;
+    transition: all ease 0.2s;
+}
+
+.post:hover {
+    -moz-box-shadow: 2px 2px 5px 0px #000000;
+    -webkit-box-shadow: 2px 2px 5px 0px #000000;
+    -o-box-shadow: 2px 2px 5px 0px #000000;
+    box-shadow: 2px 2px 5px 0px #000000;
+    filter:progid:DXImageTransform.Microsoft.Shadow(color=#000000, Direction=134, Strength=5);
 }
 
 .post .post-image {
@@ -66,6 +76,8 @@
     font-size: 26px;
     font-weight: 400;
     text-decoration: none;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 .post .post-info .post-title a:hover {
@@ -83,7 +95,6 @@
 .post .post-content {
     height: 144px;
     overflow: hidden;
-    background-color: #F3F2ED;
     padding: 10px;
     border-top: 1px dashed #B1AC9C;
     font-family: 'Roboto', sans-serif;
@@ -100,4 +111,17 @@
     background: -webkit-linear-gradient(rgba(248, 248, 248, 0) 0px, #F8F8F8 80%, #F8F8F8 100%) repeat scroll 0% 0% transparent;
     background: -o-linear-gradient(rgba(248, 248, 248, 0) 0px, #F8F8F8 80%, #F8F8F8 100%) repeat scroll 0% 0% transparent;
     background: linear-gradient(rgba(248, 248, 248, 0) 0px, #F8F8F8 80%, #F8F8F8 100%) repeat scroll 0% 0% transparent;
+}
+
+.post .post-details {
+    height: 32px;
+    border-top: 1px solid #DDDAC8;
+}
+
+.content article {
+    padding: 37px 75px;
+}
+
+.content article img.big-image {
+    margin: 37px 0;
 }
