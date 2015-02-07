@@ -49,7 +49,8 @@
                         </div>
                     </div>
 @endif
-                <a href="{{ URL::route('vote.index') }}">vote</a>
+                <a href="{{ URL::route('vote.index') }}"><img src="{{ URL::asset('imgs/vote.png') }}" style="margin-bottom:10px;" /></a>
+
                 <div class="panel">
                     <div class="panel-title">
                         <span class="icon-med icon-ladder-success"></span>Événements
