@@ -7,15 +7,14 @@
     width: 423px;
     margin: 0 6px 12px 6px;
     background-color: #F3F2ED;
-    transition: all ease 0.2s;
+    transition: all linear 0.2s;
 }
 
 .post:hover {
-    -moz-box-shadow: 2px 2px 5px 0px #000000;
-    -webkit-box-shadow: 2px 2px 5px 0px #000000;
-    -o-box-shadow: 2px 2px 5px 0px #000000;
-    box-shadow: 2px 2px 5px 0px #000000;
-    filter:progid:DXImageTransform.Microsoft.Shadow(color=#000000, Direction=134, Strength=5);
+    -moz-box-shadow: 3px 3px 5px 0px #000000;
+    -webkit-box-shadow: 3px 3px 5px 0px #000000;
+    -o-box-shadow: 3px 3px 5px 0px #000000;
+    box-shadow: 3px 3px 5px 0px #000000;
 }
 
 .post .post-image {

@@ -349,6 +349,7 @@ button {
     font-weight: 400;
     padding: 0.8rem 1.5em !important;
     cursor: pointer;
+    transition: all linear 0.2s;
 }
 
 .panel ul.level-2 li:hover {
