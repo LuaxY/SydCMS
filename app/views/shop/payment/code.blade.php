@@ -16,7 +16,6 @@
                             <div class="shop-title">
                                 <span class="picto"></span> Paiement par {{ $method }} &nbsp;<span class="icon-flag flag-{{ $country }}"></span>
                             </div>
-                            {{-- var_dump($starpass) --}}
                             <div class="payment">
                                 <div class="payment-info left">
 @if ($method == 'audiotel' || $method == 'mobilecall')
