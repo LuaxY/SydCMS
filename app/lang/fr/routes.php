@@ -8,6 +8,12 @@ return array(
     |--------------------------------------------------------------------------
     */
 
+    /** News **/
+
+    'news.index' => 'nouveautes',
+
+    'news.article' => 'article',
+
     /** Account **/
 
     'account.register' => 'inscription',

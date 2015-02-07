@@ -26,8 +26,19 @@ Route::group(array('prefix' => $locale), function()
 {
 
 	Route::any('/', array(
-		'uses' => 'AccountsController@index',
+		'uses' => 'NewsController@index',
 		'as' => 'home'
+	));
+
+	/* NEWS */
+
+	Route::get(Lang::get('routes.news.index'), array(
+		'uses' => 'NewsController@index',
+		'as'   => 'news'
+	));
+	Route::get(Lang::get('routes.news.article'), array(
+		'uses' => 'NewsController@show',
+		'as'   => 'article'
 	));
 
 	/* ACCOUNTS */
