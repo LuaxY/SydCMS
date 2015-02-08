@@ -5,6 +5,9 @@ return array (
     // Name of server
     'server_name' => 'Sydoria',
 
+    // Theme (see /public/imgs/carousel)
+    'theme' => 'abraknydes-forest',
+
     // Base points in shop
     'points' => 100,
 

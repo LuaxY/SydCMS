@@ -91,6 +91,7 @@ App::missing(function($exception)
 */
 
 View::share('server_name', Config::get('dofus.server_name'));
+View::share('theme', Config::get('dofus.theme'));
 View::share('points', Config::get('dofus.points'));
 
 /*

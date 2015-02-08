@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto" type="text/css">
     {{ HTML::style('css/style.css') }}
     {{ HTML::style('css/icons.css') }}
+    @if ($theme){{ HTML::style('imgs/carousel/'.$theme.'/style.css') }}@endif
 @yield('header')
 </head>
 <body>
@@ -29,11 +30,13 @@
 
 @if (empty($no_carousel))
     <div id="carousel">
-        <!--<video class="video" poster="{{ URL::asset('imgs/carousel/dofus1/dofus1.png') }}" loop="loop" autoplay="">
-            <source src="{{ URL::asset('imgs/carousel/dofus1/dofus1.mp4') }}" type="video/mp4">
-            <source src="{{ URL::asset('imgs/carousel/dofus1/dofus1.webm') }}" type="video/webm">
-            <source src="{{ URL::asset('imgs/carousel/dofus1/dofus1.ogv') }}" type="video/ogv">
-        </video>-->
+@if ($theme)
+        <video class="video" poster="{{ URL::asset('imgs/carousel/'.$theme.'/preview.png') }}" loop="loop" autoplay="">
+            <source src="{{ URL::asset('imgs/carousel/'.$theme.'/video.mp4') }}" type="video/mp4">
+            <source src="{{ URL::asset('imgs/carousel/'.$theme.'/video.webm') }}" type="video/webm">
+            <source src="{{ URL::asset('imgs/carousel/'.$theme.'/video.ogv') }}" type="video/ogv">
+        </video>
+@endif
     </div>
 @endif
 

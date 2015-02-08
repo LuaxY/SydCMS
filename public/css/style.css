@@ -4,12 +4,7 @@ body, div {
 }
 
 body {
-    /*background: url("../imgs/backgrounds/nowel1.jpg") no-repeat scroll center top #CDD5D8;*/ /* Nowel 1 */
-    /*background: url("../imgs/backgrounds/nowel2.jpg") no-repeat scroll center top #0E425E;*/ /* Nowel 2 */
-    /*background: url("../imgs/backgrounds/eliostrope2.jpg") no-repeat scroll center top #0D1E29;*/ /* Eliotropes */
-    /*background: url("../imgs/backgrounds/dofus4.jpg") no-repeat scroll center top #2C3B40;*/ /* Dofus 1 */
-    background: url("../imgs/backgrounds/dofus5.jpg") no-repeat scroll center top #180A01; /* Dofus 5 */
-
+    background: url("../imgs/backgrounds/dofus5.jpg") no-repeat scroll center top #180A01;
     font-size: 15px;
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
 }
