@@ -22,7 +22,7 @@ return array (
     // Starpass IDs
     'starpass' => array(
         'idp' => 137990,
-        'idd' => 267767,
+        'idd' => 267769,
     ),
 
     // RPG Paradize Top Vote
