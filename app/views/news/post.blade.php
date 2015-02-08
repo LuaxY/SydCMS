@@ -9,7 +9,7 @@
                 <div class="content">
                     <h1 class="content-title">
                         <span class="icon-big icon-news"></span> {{ $post->title }}
-                        <span class="subtitle"><span>{{ Lang::get('categories.' . $post->type) }}</span> - {{ date('d F Y', strtotime($post->date)) }}</span>
+                        <span class="subtitle"><span>@lang('categories.' . $post->type)</span> - {{ date('d F Y', strtotime($post->date)) }}</span>
                     </h1>
 
                     <article>

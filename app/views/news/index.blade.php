@@ -14,7 +14,7 @@
                         </div>
                         <div class="post-info">
                             <div class="post-title"><a href="{{ URL::route('news.post', $post->id, "null") }}">{{ $post->title }}</a></div>
-                            <div class="post-date"><a href="">{{ Lang::get('categories.' . $post->type) }}</a> - {{ date('d F Y', strtotime($post->date)) }}</div>
+                            <div class="post-date"><a href="">@lang('categories.' . $post->type)</a> - {{ date('d F Y', strtotime($post->date)) }}</div>
                         </div>
                         <div class="post-content">{{ $post->preview }}</div>
                         <div class="post-ellipsis"></div>
