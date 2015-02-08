@@ -3,7 +3,7 @@
 return array (
 
     // Name of server
-    'server_name' => 'Sydoria',
+    'server_name' => 'Erezia',
 
     // Theme (see /public/imgs/carousel)
     'theme' => 'abraknydes-forest',
@@ -27,7 +27,7 @@ return array (
 
     // RPG Paradize Top Vote
     'rpg-paradize' => array(
-        'id' => 101183,
+        'id' => 101591,
         'time' => 7205,
     ),
 

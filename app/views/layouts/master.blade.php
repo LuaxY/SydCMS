@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>{{ $server_name }} - Tournois PvP</title>
+    <title>{{ $server_name }} - Serveur 2.27</title>
     <link rel="icon" type="image/png" href="{{ URL::asset('imgs/favicon.png') }}" />
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oswald" type="text/css">
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto" type="text/css">
