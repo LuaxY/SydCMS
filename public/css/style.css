@@ -83,8 +83,7 @@ button {
     width: 100%;
     height: 70px;
     background-color: rgba(0, 0, 0, 0.70);
-    /*margin-bottom: 300px;*/
-    z-index: 1500 !important;
+    z-index: 1200 !important;
     position: relative;
 }
 
@@ -96,7 +95,8 @@ button {
     color: #fff;
     display: inline;
     cursor: pointer;
-    transition: all ease 0.4s;
+    transition: color linear 0.4s;
+    z-index: 1500 !important;
 }
 
 #header li:first-child{
@@ -112,11 +112,10 @@ button {
 }
 
 #header #logo {
-    float: left;
-    width: 300px;
-    height: 154px;
-    background: url("../imgs/sydoria.png") no-repeat;
-    background-size: 300px 154px;
+    width: 700px;
+    height: 365px;
+    background: url("../imgs/erezia.png") no-repeat;
+    background-size: 700px 365px;
     z-index: 1500 !important;
     position: relative;
 }
@@ -344,7 +343,7 @@ button {
     font-weight: 400;
     padding: 0.8rem 1.5em !important;
     cursor: pointer;
-    transition: all linear 0.2s;
+    transition: background linear 0.2s;
 }
 
 .panel ul.level-2 li:hover {
@@ -617,21 +616,22 @@ button {
 }
 
 #footer .container {
-    padding: 35px 0 0 50px;
+    overflow: auto;
 }
 
 #footer .logo {
     float: left;
-    width: 180px;
-    height: 130px;
-    background: url("../imgs/sydoria.png") no-repeat;
-    background-size: 180px 92px;
+    width: 200px;
+    height: 115px;
+    background: url("../imgs/erezia.png") no-repeat;
+    background-size: 200px 104px;
+    margin: 45px 0 0 40px
 }
 
 #footer .menu {
-    width: 700px;
+    width: 900px;
     height: 150px;
-    margin: -20px 0 0 50px;
+    padding: 10px 0 0 90px;
     text-align: left;
     position: absolute;
     display: inline;
@@ -651,7 +651,7 @@ button {
     font-size: 13px;
     color: #818181;
     cursor: pointer;
-    transition: all ease 0.25s;
+    transition: color ease 0.25s;
     text-transform: uppercase;
     padding: 2px 0;
 }
@@ -681,6 +681,7 @@ button {
     text-align: center;
     color: #838383;
     font-size: 11px;
+    margin-top: 30px;
 }
 
 #footer .copyright a {
@@ -695,5 +696,5 @@ button {
 #footer .pegi {
     position: absolute;
     left: 50%;
-    margin: -35px 0 0 300px;
+    margin: -30px 0 0 300px;
 }

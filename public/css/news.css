@@ -7,7 +7,7 @@
     width: 423px;
     margin: 0 6px 12px 6px;
     background-color: #F3F2ED;
-    transition: all linear 0.2s;
+    transition: box-shadow linear 0.2s;
 }
 
 .post:hover {

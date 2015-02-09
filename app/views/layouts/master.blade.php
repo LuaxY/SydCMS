@@ -14,7 +14,6 @@
 <body>
     <div id="header">
         <div class="container">
-            <a href="{{ URL::route('home') }}"><div id="logo"></div></a>
             <div id="menu">
                 <ul>
                     <li><a href="{{ URL::route('home') }}">{{ $server_name }}</a></li>
@@ -25,6 +24,7 @@
                     <li><a href="{{ URL::to('/') }}">Support</a></li>
                 </ul>
             </div>
+            <a href="{{ URL::route('home') }}"><div id="logo"></div></a>
         </div>
     </div>
 
