@@ -52,3 +52,8 @@ body {
     background-color: #07FEEC;
     text-decoration: none;
 }
+
+#header #logo {
+    width: 0;
+    height: 0;
+}
