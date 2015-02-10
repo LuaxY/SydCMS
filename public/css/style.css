@@ -112,12 +112,13 @@ button {
 }
 
 #header #logo {
-    width: 700px;
-    height: 365px;
+    width: 550px;
+    height: 287px;
     background: url("../imgs/erezia.png") no-repeat;
-    background-size: 700px 365px;
+    background-size: 550px 287px;
     z-index: 1500 !important;
     position: relative;
+    margin-top: 50px;
 }
 
 #header #menu {
