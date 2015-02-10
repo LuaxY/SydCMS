@@ -20,7 +20,7 @@
                     <li><a href="{{ URL::route('register') }}">Rejoindre</a></li>
                     <li><a href="{{ URL::to('server') }}">Serveur</a></li>
                     <li><a href="{{ URL::to('events') }}">Tournois</a></li>
-                    <li><a href="http://forum.sydoria.fr/">Forum</a></li>
+                    <li><a href="http://195.154.118.75/">Forum</a></li>
                     <li><a href="{{ URL::to('/') }}">Support</a></li>
                 </ul>
             </div>
