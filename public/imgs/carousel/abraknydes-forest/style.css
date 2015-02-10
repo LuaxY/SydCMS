@@ -2,10 +2,6 @@ body {
     background: url("background.jpg") no-repeat scroll center top #000;
 }
 
-#header .container {
-    width: 1500px;
-}
-
 #header #logo {
-    margin-left: 150px;;
+    margin: 50px 0 0 0;
 }
