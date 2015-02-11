@@ -20,8 +20,8 @@
                     <li><a href="{{ URL::route('register') }}">Rejoindre</a></li>
                     <li><a href="{{ URL::to('server') }}">Serveur</a></li>
                     <li><a href="{{ URL::to('events') }}">Tournois</a></li>
-                    <li><a href="http://195.154.118.75/">Forum</a></li>
-                    <li><a href="{{ URL::to('/') }}">Support</a></li>
+                    <li><a href="http://forum.erezia.net/">Forum</a></li>
+                    <li><a href="{{ URL::to('support') }}">Support</a></li>
                 </ul>
             </div>
             <a href="{{ URL::route('home') }}"><div id="logo"></div></a>
@@ -48,7 +48,7 @@
             <div class="menu">
                 <ul>
                     <li>{{ $server_name }}</li>
-                    <li><a href="{{ URL::to('news') }}">Actualités</a></li>
+                    <li><a href="{{ URL::route('news') }}">Actualités</a></li>
                     <li><a href="{{ URL::route('register') }}">Télécharger</a></li>
                     <li><a href="{{ URL::route('register') }}">Créer un compte</a></li>
                     <li><a href="{{ URL::to('password-lost') }}">Mot de passe oublié ?</a></li>
@@ -69,10 +69,10 @@
                 </ul>
                 <ul>
                     <li>Support</li>
-                    <li><a href="{{ URL::to('/') }}">Aide</a></li>
-                    <li><a href="http://forum.sydoria.fr/">Forum</a></li>
-                    <li><a href="mailto:elon@sydoria.fr">Contact</a></li>
-                    <li><a href="{{ URL::to('/') }}">FAQ</a></li>
+                    <li><a href="{{ URL::to('support/help') }}">Aide</a></li>
+                    <li><a href="http://forum.erezia.net/">Forum</a></li>
+                    <li><a href="mailto:contactn@erezia.net">Contact</a></li>
+                    <li><a href="{{ URL::to('support/faq') }}">FAQ</a></li>
                 </ul>
             </div>
         </div>
