@@ -6,7 +6,7 @@ return array (
     'server_name' => 'Erezia',
 
     // Theme (see /public/imgs/carousel)
-    'theme' => 'abraknydes-forest',
+    'theme' => false,
 
     // Base points in shop
     'points' => 100,

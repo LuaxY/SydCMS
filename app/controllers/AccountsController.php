@@ -98,6 +98,11 @@ class AccountsController extends \BaseController {
 		return Redirect::route('accounts.index');*/
 	}
 
+	public function auth()
+	{
+		return View::make('accounts.login');
+	}
+
 	public function login()
 	{
 		$data = Input::all();

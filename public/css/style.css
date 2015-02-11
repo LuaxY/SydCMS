@@ -508,6 +508,22 @@ button {
     color: #FFF;
 }
 
+.form-group input.has-error::-webkit-input-placeholder {
+    color: white;
+}
+
+.form-group input.has-error:-moz-placeholder {
+    color: white;
+}
+
+.form-group input.has-error::-moz-placeholder {
+    color: white;
+}
+
+.form-group input.has-error:-ms-input-placeholder {
+    color: white;
+}
+
 .form-group input.has-error:focus {
     background-color: #E4442C;
 }

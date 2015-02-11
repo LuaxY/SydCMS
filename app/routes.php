@@ -49,6 +49,10 @@ Route::group(array('prefix' => $locale), function()
 		'uses' => 'AccountsController@create',
 		'as'   => 'register'
 	));
+	Route::get(Lang::get('routes.account.login'), array(
+		'uses' => 'AccountsController@auth',
+		'as'   => 'login'
+	));
 	Route::post(Lang::get('routes.account.login'), array(
 		'uses' => 'AccountsController@login',
 		'as'   => 'login'
@@ -84,7 +88,6 @@ Route::group(array('prefix' => $locale), function()
 	/* VOTE */
 
 	Route::get(Lang::get('routes.vote.index'), array(
-		'before' => 'auth',
 		'uses'   => 'VoteController@index',
 		'as'     => 'vote.index'
 	));
