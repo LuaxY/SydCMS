@@ -1,0 +1,56 @@
+#vote-stats {
+    height: 150px;
+    background-color: #171c1b;
+    width: 100%;
+    color: #fff;
+    padding: 10px 0;
+}
+
+#vote-stats .left {
+    width: 50%;
+    height: 100%;
+    font-size: 23px;
+    font-weight: 700;
+    padding: 47px 0 0 75px;
+    border-right: 1px solid #494942;
+}
+
+#vote-stats .left .nb-vote {
+    color: #d35417;
+    font-size: 26px;
+}
+
+#vote-stats .right {
+    width: 50%;
+}
+
+#vote-stats .vote-icon {
+    float: left;
+    margin-right: 12px;
+}
+
+#vote-stats .vote-icon img {
+    width: 52px;
+    height: 52px;
+}
+
+#vote-stats .vote-gift-win,
+#vote-stats .vote-next-gift {
+    color: #fff;
+    font-size: 33px;
+    line-height: 26px;
+    font-family: 'Bebas Neue', sans-serif;
+    padding: 0 10px;
+}
+
+#vote-stats .vote-gift-win span,
+#vote-stats .vote-next-gift span {
+    color: #97a800;
+    font-size: 22px;
+    display: block;
+}
+
+#vote-stats .vote-separator {
+    margin: 10px;
+    border-bottom: 1px solid #353431;
+}
