@@ -54,3 +54,42 @@
     margin: 10px;
     border-bottom: 1px solid #353431;
 }
+
+#vote-process {
+    overflow: auto;
+}
+
+#vote-process .vote-link {
+    text-align: center;
+    width: 150px;
+    margin: 10px auto;
+    padding: 12px 34px;
+    color: #fff;
+    display: block;
+    background-color: #f29c06;
+    text-shadow: 0 1px 1px #333;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 23px;
+    font-weight: 400;
+}
+
+#vote-process .vote-link:hover {
+    cursor: pointer;
+    text-decoration: none;
+    background-color: #FFD200;
+}
+
+#vote-process .left {
+    width: 50%;
+}
+
+#vote-process .right {
+    width: 50%;
+    /*margin-top: 20px;**/
+    text-align: justify;
+    padding: 20px;
+}
+
+#vote-gifts {
+
+}
