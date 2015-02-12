@@ -11,6 +11,9 @@ return array (
     // Base points in shop
     'points' => 100,
 
+    // Base points for vote
+    'vote' => 10,
+
     // Promotions
     'promos' => array(
         'fr|sms' => 20,

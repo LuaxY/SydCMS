@@ -47,7 +47,7 @@
                             <a class="vote-link" href="{{ URL::route('vote.process') }}">Voter</a>
                         </div>
                         <div class="right">
-                            Chaque vote rapporte X points, touts les 10 votes vous gagnez un nouveau cadeau.
+                            Chaque vote permet d'obtenir {{ Config::get('dofus.vote') }} points.<br>Touts les 10 votes vous gagnez un nouveau cadeau.
                         </div>
                     </div>
                     <div id="vote-gifts">
