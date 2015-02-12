@@ -134,8 +134,6 @@
 #vote-gifts .vote-time-line .vote-reward {
     float: left;
     width: 20%;
-    min-width: 89px;
-    height: 157px;
 }
 
 #vote-gifts .vote-time-line .vote-reward .arrow {
