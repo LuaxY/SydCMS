@@ -16,7 +16,7 @@
                             <a class="vote-link" href="{{ URL::route('vote.process') }}">Voter</a>
                         </div>
                         <div class="right">
-                            Vous n'êtes pas identifié, votre vote ne rapporteras aucun points. <a href="">S'identifier</a>
+                            Vous n'êtes pas identifié, votre vote ne rapporteras aucun points. <a href="{{ URL::route('login') }}">S'identifier</a>
                         </div>
                     </div>
 @else
