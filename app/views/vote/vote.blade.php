@@ -51,7 +51,67 @@
                         </div>
                     </div>
                     <div id="vote-gifts">
-
+                        <div class="left">
+                            <a href="" class="selected">1<sup>er</sup> Palier</a>
+                            <a href="">2<sup>ème</sup> Palier</a>
+                            <a href="">3<sup>ème</sup> Palier</a>
+                            <a href="">4<sup>ème</sup> Palier</a>
+                            <a href="">5<sup>ème</sup> Palier</a>
+                        </div>
+                        <div class="right">
+                            <div class="vote-time-line">
+                                <div class="vote-reward vote-block-1">
+                                    <span class="arrow"></span>
+                                    <a href="">
+                                        <span class="vote-reward-text">
+                                            <span>10</span>
+                                            votes
+                                        </span>
+                                        <span class="vote-reward-icon"></span>
+                                    </a>
+                                </div>
+                                <div class="vote-reward vote-block-2">
+                                    <span class="arrow"></span>
+                                    <a href="">
+                                        <span class="vote-reward-text">
+                                            <span>20</span>
+                                            votes
+                                        </span>
+                                        <span class="vote-reward-icon"></span>
+                                    </a>
+                                </div>
+                                <div class="vote-reward vote-block-3">
+                                    <span class="arrow"></span>
+                                    <a href="">
+                                        <span class="vote-reward-text">
+                                            <span>30</span>
+                                            votes
+                                        </span>
+                                        <span class="vote-reward-icon"></span>
+                                    </a>
+                                </div>
+                                <div class="vote-reward vote-block-4">
+                                    <span class="arrow"></span>
+                                    <a href="">
+                                        <span class="vote-reward-text">
+                                            <span>40</span>
+                                            votes
+                                        </span>
+                                        <span class="vote-reward-icon"></span>
+                                    </a>
+                                </div>
+                                <div class="vote-reward vote-block-5">
+                                    <span class="arrow"></span>
+                                    <a href="" class="selected">
+                                        <span class="vote-reward-text">
+                                            <span>50</span>
+                                            votes
+                                        </span>
+                                        <span class="vote-reward-icon big"></span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 @endif
                 </div> <!-- content -->
