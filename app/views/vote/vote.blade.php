@@ -128,7 +128,7 @@
                                 </div>
                                 <div class="vote-gift-description-block">
                                     <div class="object-illu left">
-                                        <img src="{{ Config::get('dofus.web-api') }}/forge/staticns/dofus/www/game/items/200/16437.png" />
+                                        <img src="{{ Config::get('dofus.web-api') }}/forge/dofus/www/game/items/200/16437.png" />
                                     </div>
                                     <div class="vote-gift-description right">
                                         <div class="title">
