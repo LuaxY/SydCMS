@@ -34,4 +34,7 @@ return array (
         'time' => 7205,
     ),
 
+    // Dofus Web API
+    'web-api' => 'http://api.voidmx.net',
+
 );

@@ -125,7 +125,19 @@
                                         <span class="vote-gift-title-next">Cadeau à obtenir :</span>
                                         <span class="vote-gift-title-object">Object</span>
                                     </div>
-                                </di>
+                                </div>
+                                <div class="vote-gift-description-block">
+                                    <div class="object-illu left">
+                                        <img src="{{ Config::get('dofus.web-api') }}/forge/staticns/dofus/www/game/items/200/16437.png" />
+                                    </div>
+                                    <div class="vote-gift-description right">
+                                        <div class="title">
+                                            <span class="picto"></span>
+                                            Description
+                                        </div>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In iaculis elementum elit, a condimentum dui convallis et. Sed aliquam aliquet libero, non iaculis ante venenatis dignissim. Curabitur eu felis ac eros auctor auctor quis ut est.</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

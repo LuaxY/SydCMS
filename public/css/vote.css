@@ -290,3 +290,19 @@
     display: block;
     color: #e86403;
 }
+
+#vote-gifts .vote-gift-description-block {
+    padding: 12px;
+    overflow: auto;
+}
+
+#vote-gifts .vote-gift-description-block .object-illu {
+    width: 140px;
+    height: 140px;
+    margin-bottom: 0;
+}
+
+#vote-gifts .vote-gift-description-block .right {
+    width: 485px;
+    padding: 0;
+}
