@@ -116,12 +116,15 @@
                                 </div>
                             </div>
                             <div class="vote-gift-details vote-block-1">
-                                <div class="vote-gift-title">
+                                <div class="vote-gift-title-block">
                                     <span class="vote-reward-text">
                                         <span>10</span>
                                         votes
                                     </span>
-
+                                    <div class="vote-gift-title">
+                                        <span class="vote-gift-title-next">Cadeau à obtenir :</span>
+                                        <span class="vote-gift-title-object">Object</span>
+                                    </div>
                                 </di>
                             </div>
                         </div>

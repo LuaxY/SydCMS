@@ -260,9 +260,33 @@
     border: 1px solid #c9c6bb;
 }
 
-#vote-gifts .vote-gift-details .vote-gift-title {
+#vote-gifts .vote-gift-details .vote-gift-title-block {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 30px;
     overflow: hidden;
     margin-left: 12px;
+}
+
+#vote-gifts .vote-gift-details .vote-gift-title {
+    display: block;
+    overflow: hidden;
+    line-height: 33px;
+    padding-left: 12px;
+}
+
+#vote-gifts .vote-gift-details .vote-reward-text {
+    text-align: center;
+    display: block;
+    vertical-align: middle;
+    float: left;
+}
+
+#vote-gifts .vote-gift-details .vote-gift-title .vote-gift-title-next {
+    display: block;
+    color: #848e02;
+}
+
+#vote-gifts .vote-gift-details .vote-gift-title .vote-gift-title-object {
+    display: block;
+    color: #e86403;
 }
