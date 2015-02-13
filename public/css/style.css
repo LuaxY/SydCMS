@@ -459,6 +459,48 @@ button {
     color: #7F7B68;
 }
 
+.title {
+    text-transform: uppercase;
+    font-family: 'Bebas Neue', sans-serif;
+    font-weight: 400;
+    font-size: 26px;
+    color: #28170E;
+    margin-bottom: 10px;
+}
+
+.title span.picto {
+    background-position: -148px 0px;
+    margin-right: 0.2em;
+    padding: 0px 0.2em;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    width: auto;
+    height: 28px;
+    line-height: 28px;
+}
+
+/*-----------------------------------------------*/
+/*---------------------OTHER---------------------*/
+/*-----------------------------------------------*/
+
+.object-illu {
+    text-align: center;
+    border: 4px inset;
+    margin-bottom: 6px;
+    border-top-color: #b1ac9c;
+    border-right-color: #c9c6bb;
+    border-bottom-color: #dfdbcd;
+    border-left-color: #c9c6bb;
+    background: url('../imgs/bg-item.jpg') center center no-repeat;
+    background-size: cover;
+}
+
+.object-illu img {
+    display: inline-block;
+    height: auto;
+    max-width: 100%;
+}
+
 /*-----------------------------------------------*/
 /*---------------------FORM----------------------*/
 /*-----------------------------------------------*/

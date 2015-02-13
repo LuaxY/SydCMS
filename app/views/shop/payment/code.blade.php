@@ -13,7 +13,7 @@
 
                     <div class="shop">
                         <div class="shop-content">
-                            <div class="shop-title">
+                            <div class="title">
                                 <span class="picto"></span> Paiement par {{ $method }} &nbsp;<span class="icon-flag flag-{{ $country }}"></span>
                             </div>
                             <div class="payment">

@@ -52,27 +52,7 @@
     font-style: italic;
 }
 
-.shop .shop-title {
-    text-transform: uppercase;
-    font-family: 'Bebas Neue', sans-serif;
-    font-weight: 400;
-    font-size: 26px;
-    color: #28170E;
-    margin-bottom: 10px;
-}
-
-.shop .shop-title span.picto {
-    background-position: -148px 0px;
-    margin-right: 0.2em;
-    padding: 0px 0.2em;
-    background-repeat: no-repeat;
-    vertical-align: middle;
-    width: auto;
-    height: 28px;
-    line-height: 28px;
-}
-
-.shop .shop-title span.icon-flag {
+.shop .title span.icon-flag {
     display: inline-block;
     vertical-align: middle;
 }

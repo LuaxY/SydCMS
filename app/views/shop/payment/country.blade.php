@@ -13,7 +13,7 @@
 
                     <div class="shop">
                         <div class="shop-content">
-                            <div class="shop-title">
+                            <div class="title">
                                 <span class="picto"></span> Choisissez votre pays
                             </div>
                             <div class="shop-country">

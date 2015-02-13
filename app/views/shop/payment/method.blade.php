@@ -15,7 +15,7 @@
                         {{ Form::open(array('route' => 'shop.payment.code')) }}
                             <input type="hidden" name="country" value="{{ $country }}" />
                             <div class="shop-content">
-                                <div class="shop-title">
+                                <div class="title">
                                     <span class="picto"></span> Choisissez votre mode de paiement &nbsp;<span class="icon-flag flag-{{ $country }}"></span>
                                 </div>
 @foreach ($starpass as $method => $data)
