@@ -59,10 +59,14 @@
                             <a href="">5<sup>ème</sup> Palier</a>
                         </div>
                         <div class="right">
+                            <div class="vote-palier-name">Palier : 1</div>
+                            <div class="vote-progress">
+                                <div class="progress-bar" style="width: 20%"></div>
+                            </div>
                             <div class="vote-time-line">
                                 <div class="vote-reward vote-block-1">
                                     <span class="arrow"></span>
-                                    <a href="">
+                                    <a href="" class="selected">
                                         <span class="vote-reward-text">
                                             <span>10</span>
                                             votes
@@ -102,7 +106,7 @@
                                 </div>
                                 <div class="vote-reward vote-block-5">
                                     <span class="arrow"></span>
-                                    <a href="" class="selected">
+                                    <a href="">
                                         <span class="vote-reward-text">
                                             <span>50</span>
                                             votes
@@ -110,6 +114,15 @@
                                         <span class="vote-reward-icon big"></span>
                                     </a>
                                 </div>
+                            </div>
+                            <div class="vote-gift-details vote-block-1">
+                                <div class="vote-gift-title">
+                                    <span class="vote-reward-text">
+                                        <span>10</span>
+                                        votes
+                                    </span>
+
+                                </di>
                             </div>
                         </div>
                     </div>
