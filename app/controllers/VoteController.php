@@ -17,7 +17,7 @@ class VoteController extends \BaseController {
 
 	public function palier($id)
 	{
-		echo "hello";
+		return View::make('vote.palier');
 	}
 
 }
