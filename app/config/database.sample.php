@@ -49,7 +49,7 @@ return array(
 		'auth' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'stump_auth',
+			'database'  => 'erezia_auth',
 			'username'  => 'root',
 			'password'  => '',
 			'charset'   => 'utf8',
@@ -60,7 +60,7 @@ return array(
 		'world' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'stump_world',
+			'database'  => 'erezia_world',
 			'username'  => 'root',
 			'password'  => '',
 			'charset'   => 'utf8',
@@ -71,7 +71,7 @@ return array(
 		'web' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'sydoria_web',
+			'database'  => 'erezia_web',
 			'username'  => 'root',
 			'password'  => '',
 			'charset'   => 'utf8',

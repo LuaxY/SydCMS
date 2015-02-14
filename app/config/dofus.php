@@ -35,6 +35,6 @@ return array (
     ),
 
     // Dofus Web API
-    'web-api' => 'http://api.voidmx.net',
+    'web-api' => 'http://api.voidmx.net/',
 
 );
