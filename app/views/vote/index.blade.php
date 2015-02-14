@@ -71,6 +71,7 @@
 
                 <script>
                     $("#vote-gifts .left div[data={{ $palierId }}]").addClass("selected");
+                    progress();
 
                     $("#vote-gifts .left div").on("click", function() {
                         var self = $(this);
@@ -92,7 +93,15 @@
                             $(".loading").hide();
                             self.addClass("selected");
                             $("#vote-gifts").removeClass("mask-relative masked");
+
+                            progress();
                         });
                     });
+
+                    function progress()
+                    {
+                        var percent = $(".progress-bar").attr("data");
+                        $(".progress-bar").animate({width: percent +'%'}, 0, "linear");
+                    }
                 </script>
 @stop

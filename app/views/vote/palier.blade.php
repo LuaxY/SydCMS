@@ -1,6 +1,6 @@
                         <div class="vote-palier-name">Palier : {{ $palierId }}</div>
                             <div class="vote-progress">
-                                <div class="progress-bar" style="width: {{ $progress }}%"></div>
+                                <div class="progress-bar" data="{{ $progress }}"></div>
                             </div>
                             <div class="vote-time-line">
                                 <div class="vote-reward vote-block-1">
