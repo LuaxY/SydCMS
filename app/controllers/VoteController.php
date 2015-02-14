@@ -12,6 +12,7 @@ class VoteController extends \BaseController {
 		$nextGifts = 10 - ($votesCount % 10);
 		$progress = ($votesCount - (($palierId - 1) * 50)) * 100 / 50;
 		$progress = $progress > 100 ? 100 : $progress;
+		$reward = VoteReward::where('step', 10)->firstOrFail();
 
 		$data = array(
 			"palierId"   => $palierId,
@@ -19,6 +20,7 @@ class VoteController extends \BaseController {
 			"giftsCount" => $giftsCount,
 			"nextGifts"  => $nextGifts,
 			"progress"   => $progress,
+			"reward"     => $reward,
 		);
 
 		return View::make('vote.index', $data);
@@ -40,13 +42,28 @@ class VoteController extends \BaseController {
 		$votesCount = $this->votes;
 		$progress = ($votesCount - (($id - 1) * 50)) * 100 / 50;
 		$progress = $progress > 100 ? 100 : $progress;
+		$reward = VoteReward::where('step', 10)->firstOrFail();
 
 		$data = array(
 			"palierId" => $id,
 			"progress" => $progress,
+			"reward"   => $reward,
 		);
 
 		return View::make('vote.palier', $data);
+	}
+
+	public function object($palier, $step)
+	{
+		if ($palier < 1 || $palier > 5)
+			$palier = 1;
+
+		if ($step < 1 || $step > 5)
+			$step = 1;
+
+		$reward = VoteReward::where('step', 10)->firstOrFail();
+
+		return View::make('vote.object', compact('reward'));
 	}
 
 }
