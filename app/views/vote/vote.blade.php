@@ -47,16 +47,16 @@
                             <a class="vote-link" href="{{ URL::route('vote.process') }}">Voter</a>
                         </div>
                         <div class="right">
-                            Chaque vote permet d'obtenir {{ Config::get('dofus.vote') }} points.<br>Touts les 10 votes vous gagnez un nouveau cadeau.
+                            Chaque vote permet d'obtenir {{ Config::get('dofus.vote') }} ogrines.<br>Touts les 10 votes vous gagnez un nouveau cadeau.
                         </div>
                     </div>
                     <div id="vote-gifts">
                         <div class="left">
-                            <a href="" class="selected">1<sup>er</sup> Palier</a>
-                            <a href="">2<sup>ème</sup> Palier</a>
-                            <a href="">3<sup>ème</sup> Palier</a>
-                            <a href="">4<sup>ème</sup> Palier</a>
-                            <a href="">5<sup>ème</sup> Palier</a>
+                            <div data="1" class="selected">1<sup>er</sup> Palier</div>
+                            <div data="2">2<sup>ème</sup> Palier</div>
+                            <div data="3">3<sup>ème</sup> Palier</div>
+                            <div data="4">4<sup>ème</sup> Palier</div>
+                            <div data="5">5<sup>ème</sup> Palier</div>
                         </div>
                         <div class="right">
                             <div class="vote-palier-name">Palier : 1</div>
@@ -143,4 +143,17 @@
                     </div>
 @endif
                 </div> <!-- content -->
+
+                <script>
+                    $("#vote-gifts .left div").on("click", function() {
+                        var palierId = $(this).attr("data");
+                        $.ajax({
+                            type: "GET",
+                            url: "{{ URL::route('vote.palier') }}/" + palierId,
+                        })
+                        .done(function(res) {
+                            $("#vote-gifts .right").html(res);
+                        });
+                    });
+                </script>
 @stop

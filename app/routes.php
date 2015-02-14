@@ -96,5 +96,10 @@ Route::group(array('prefix' => $locale), function()
 		'uses'   => 'VoteController@process',
 		'as'     => 'vote.process'
 	));
+	Route::get(Lang::get('routes.vote.palier'), array(
+		'before' => 'auth',
+		'uses'   => 'VoteController@palier',
+		'as'     => 'vote.palier'
+	));
 
 });

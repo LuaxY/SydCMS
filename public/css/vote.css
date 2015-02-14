@@ -98,7 +98,7 @@
     width: 120px;
 }
 
-#vote-gifts .left a {
+#vote-gifts .left div {
     display: block;
     background: #edeae0;
     color: #422f14;
@@ -110,10 +110,11 @@
     line-height: 33px;
     font-weight: 700;
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    cursor: pointer;
 }
 
-#vote-gifts .left a:hover,
-#vote-gifts .left a.selected {
+#vote-gifts .left div:hover,
+#vote-gifts .left div.selected {
     background: #fff;
     border-right: 6px solid #97a800;
 }

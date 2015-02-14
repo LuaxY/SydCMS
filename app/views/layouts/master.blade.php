@@ -8,8 +8,9 @@
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto" type="text/css">
     {{ HTML::style('css/style.css') }}
     {{ HTML::style('css/icons.css') }}
-    @if ($theme){{ HTML::style('imgs/carousel/'.$theme.'/style.css') }}@endif
+@if ($theme){{ HTML::style('imgs/carousel/'.$theme.'/style.css') }}@endif
 @yield('header')
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 </head>
 <body>
     <div id="header">

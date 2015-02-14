@@ -15,4 +15,9 @@ class VoteController extends \BaseController {
 		return Redirect::to("http://www.rpg-paradize.com/?page=vote&vote=" . Config::get("dofus.rpg-paradize.id"));
 	}
 
+	public function palier($id)
+	{
+		echo "hello";
+	}
+
 }

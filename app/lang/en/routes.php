@@ -36,6 +36,8 @@ return array(
 
     'vote.index' => 'vote',
 
-    'vote.process' => 'vote/process'
+    'vote.process' => 'vote/process',
+
+    'vote.palier' => 'vote/palier/{id?}',
 
 );
