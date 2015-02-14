@@ -22,7 +22,7 @@
 @else
                     <div id="vote-stats">
                         <div class="left">
-                            Vous avez déjà voté <span class="nb-vote">0</span> fois !
+                            Vous avez déjà voté <span class="nb-vote">{{ $votesCount }}</span> fois !
                         </div>
                         <div class="right">
                             <div class="vote-gift-win">
@@ -30,7 +30,7 @@
                                     <img src="{{ URL::asset('imgs/icons/gift.jpg') }}" />
                                 </div>
                                 <span>Cadeaux gagnés</span>
-                                0
+                                {{ $giftsCount }}
                             </div>
                             <div class="vote-separator"></div>
                             <div class="vote-next-gift">
@@ -38,7 +38,7 @@
                                     <img src="{{ URL::asset('imgs/icons/gift.jpg') }}" />
                                 </div>
                                 <span>Prochain cadeau</span>
-                                dans 0 votes
+                                dans {{ $nextGifts }} votes
                             </div>
                         </div>
                     </div>

@@ -1,13 +1,13 @@
-                            <div class="vote-palier-name">Palier : {{ $palierId }}</div>
+                        <div class="vote-palier-name">Palier : {{ $palierId }}</div>
                             <div class="vote-progress">
-                                <div class="progress-bar" style="width: 20%"></div>
+                                <div class="progress-bar" style="width: {{ $progress }}%"></div>
                             </div>
                             <div class="vote-time-line">
                                 <div class="vote-reward vote-block-1">
                                     <span class="arrow"></span>
                                     <a href="" class="selected">
                                         <span class="vote-reward-text">
-                                            <span>10</span>
+                                            <span>{{ 50 * ($palierId - 1) + 10 }}</span>
                                             votes
                                         </span>
                                         <span class="vote-reward-icon"></span>
@@ -17,7 +17,7 @@
                                     <span class="arrow"></span>
                                     <a href="">
                                         <span class="vote-reward-text">
-                                            <span>20</span>
+                                            <span>{{ 50 * ($palierId - 1) + 20 }}</span>
                                             votes
                                         </span>
                                         <span class="vote-reward-icon"></span>
@@ -27,7 +27,7 @@
                                     <span class="arrow"></span>
                                     <a href="">
                                         <span class="vote-reward-text">
-                                            <span>30</span>
+                                            <span>{{ 50 * ($palierId - 1) + 30 }}</span>
                                             votes
                                         </span>
                                         <span class="vote-reward-icon"></span>
@@ -37,7 +37,7 @@
                                     <span class="arrow"></span>
                                     <a href="">
                                         <span class="vote-reward-text">
-                                            <span>40</span>
+                                            <span>{{ 50 * ($palierId - 1) + 40 }}</span>
                                             votes
                                         </span>
                                         <span class="vote-reward-icon"></span>
@@ -47,7 +47,7 @@
                                     <span class="arrow"></span>
                                     <a href="">
                                         <span class="vote-reward-text">
-                                            <span>50</span>
+                                            <span>{{ 50 * ($palierId - 1) + 50 }}</span>
                                             votes
                                         </span>
                                         <span class="vote-reward-icon big"></span>
