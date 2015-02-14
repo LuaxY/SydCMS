@@ -4,7 +4,7 @@ class VoteController extends \BaseController {
 
 	public function index()
 	{
-		return View::make('vote.vote');
+		return View::make('vote.index');
 	}
 
 	public function process()
