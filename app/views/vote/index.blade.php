@@ -52,7 +52,7 @@
                     </div>
                     <div id="vote-gifts">
                         <div class="left">
-                            <div data="1" class="selected">1<sup>er</sup> Palier</div>
+                            <div data="1">1<sup>er</sup> Palier</div>
                             <div data="2">2<sup>ème</sup> Palier</div>
                             <div data="3">3<sup>ème</sup> Palier</div>
                             <div data="4">4<sup>ème</sup> Palier</div>
@@ -70,6 +70,8 @@
                 </div> <!-- content -->
 
                 <script>
+                    $("#vote-gifts .left div[data={{ $palierId }}]").addClass("selected");
+
                     $("#vote-gifts .left div").on("click", function() {
                         var self = $(this);
                         var palierId = self.attr("data");

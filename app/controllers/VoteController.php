@@ -6,7 +6,7 @@ class VoteController extends \BaseController {
 
 	public function index()
 	{
-		$palierId = 1;
+		$palierId = intval($this->votes / 50) + 1;
 		$votesCount = $this->votes;
 		$giftsCount = intval($votesCount / 10);
 		$nextGifts = 10 - ($votesCount % 10);
@@ -34,6 +34,9 @@ class VoteController extends \BaseController {
 
 	public function palier($id)
 	{
+		if ($id < 1 || $id > 5)
+			$id = 1;
+
 		$votesCount = $this->votes;
 		$progress = ($votesCount - (($id - 1) * 50)) * 100 / 50;
 		$progress = $progress > 100 ? 100 : $progress;
