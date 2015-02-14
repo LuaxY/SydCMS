@@ -61,6 +61,10 @@
                         <div class="right">
 @include('vote.palier')
                         </div>
+                        <div class="loadmask"></div>
+                        <div class="loading">
+                            <img src="{{ URL::asset('imgs/loader.gif') }}" />
+                        </div>
                     </div>
 @endif
                 </div> <!-- content -->
@@ -70,15 +74,22 @@
                         var self = $(this);
                         var palierId = self.attr("data");
 
+                        $("#vote-gifts").addClass("mask-relative masked");
+                        $("#vote-gifts .left .selected").removeClass("selected");
+                        $(".loadmask").show();
+                        $(".loading").show();
+
                         $.ajax({
                             type: "GET",
                             url: "{{ URL::route('vote.palier') }}/" + palierId,
                         })
                         .done(function(res) {
-                            $("#vote-gifts .left .selected").removeClass("selected");
-                            self.addClass("selected");
-
                             $("#vote-gifts .right").html(res);
+
+                            $(".loadmask").hide();
+                            $(".loading").hide();
+                            self.addClass("selected");
+                            $("#vote-gifts").removeClass("mask-relative masked");
                         });
                     });
                 </script>

@@ -9,7 +9,7 @@ class VoteController extends \BaseController {
 		$palierId = 1;
 		$votesCount = $this->votes;
 		$giftsCount = intval($votesCount / 10);
-		$nextGifts = 10 - ($votesCount - ($giftsCount * 10));
+		$nextGifts = 10 - ($votesCount % 10);
 		$progress = ($votesCount - (($palierId - 1) * 50)) * 100 / 50;
 		$progress = $progress > 100 ? 100 : $progress;
 
