@@ -1,4 +1,4 @@
-                            <div class="vote-palier-name">Palier : 1</div>
+                            <div class="vote-palier-name">Palier : {{ $palierId }}</div>
                             <div class="vote-progress">
                                 <div class="progress-bar" style="width: 20%"></div>
                             </div>

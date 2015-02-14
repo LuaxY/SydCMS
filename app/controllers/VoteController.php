@@ -4,7 +4,11 @@ class VoteController extends \BaseController {
 
 	public function index()
 	{
-		return View::make('vote.index');
+		$data = array(
+			"palierId" => 1
+		);
+
+		return View::make('vote.index', $data);
 	}
 
 	public function process()
@@ -17,7 +21,11 @@ class VoteController extends \BaseController {
 
 	public function palier($id)
 	{
-		return View::make('vote.palier');
+		$data = array(
+			"palierId" => $id
+		);
+
+		return View::make('vote.palier', $data);
 	}
 
 }
