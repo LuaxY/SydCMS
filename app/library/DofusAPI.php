@@ -2,7 +2,7 @@
 
 class DofusAPI {
 
-    static function get($url)
+    static function forge($url)
     {
         return Config::get('dofus.web-api') . "forge/" . $url;
     }

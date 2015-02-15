@@ -118,17 +118,18 @@
                     }
 
                     function showItem(item, step, votes) {
-                        $(".vote-gift-details").removeClass("vote-block-1 vote-block-2 vote-block-3 vote-block-4 vote-block-5");
                         $(".vote-item").addClass("mask-relative masked");
                         $(".vote-item > .loadmask").show();
                         $(".vote-item > .loading").show();
 
                         $.ajax({
                             type: "GET",
-                            url: "http://localhost/test.json?item="+item,
+                            url: "{{ URL::route('vote.object') }}/" + item,
                             dataType: "json",
                         })
                         .done(function(res) {
+                            $(".vote-gift-details").removeClass("vote-block-1 vote-block-2 vote-block-3 vote-block-4 vote-block-5");
+
                             $(".vote-item .vote-gift-title-object").html(res.name);
                             $(".vote-item .vote-gift-description p").html(res.description);
                             $(".vote-item .object-illu img").attr("src", res.image);

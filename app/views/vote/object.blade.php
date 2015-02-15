@@ -1,4 +1,4 @@
-                            <div class="vote-gift-details">
+                            <div class="vote-gift-details vote-block-{{ $current }}">
                                 <div class="vote-gift-title-block">
                                     <span class="vote-reward-text">
                                         <span></span>

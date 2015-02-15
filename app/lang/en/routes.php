@@ -40,6 +40,6 @@ return array(
 
     'vote.palier' => 'vote/palier/{id?}',
 
-    'vote.object' => 'vote/object/{palier?}/{step?}',
+    'vote.object' => 'vote/object/{item?}',
 
 );

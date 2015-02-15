@@ -57,17 +57,17 @@ class VoteController extends \BaseController {
 		return View::make('vote.palier', $data);
 	}
 
-	public function object($palier, $step)
+	public function object($item)
 	{
-		if ($palier < 1 || $palier > 5)
-			$palier = 1;
+		$object = ItemTemplate::where('Id', $item)->firstOrFail();
 
-		if ($step < 1 || $step > 5)
-			$step = 1;
+		$json = array(
+			"name"        => DofusAPI::text($object->NameId),
+			"description" => DofusAPI::text($object->DescriptionId),
+			"image"       => DofusAPI::forge("dofus/www/game/items/200/" . $object->IconId . ".png"),
+		);
 
-		$reward = VoteReward::where('step', 10)->firstOrFail();
-
-		return View::make('vote.object', compact('reward'));
+		return json_encode($json);
 	}
 
 	private function userVotes()
