@@ -49,7 +49,16 @@
                         </div>
                     </div>
 @endif
-                <a href="{{ URL::route('vote.index') }}"><img src="{{ URL::asset('imgs/vote.png') }}" style="margin-bottom:10px;" /></a>
+                <a class="btn-aside btn-vote" href="{{ URL::route('vote.index') }}">
+                    <em>Besoin d'ogrines ?</em>
+                    <br>
+                    Vote pour le serveur !
+                </a>
+                <a class="btn-aside btn-shop" href="{{ URL::route('shop.payment.country') }}">
+                    <em>Une envie de cadeau ?</em>
+                    <br>
+                    Achete des ogrines
+                </a>
 
                 <div class="panel">
                     <div class="panel-title">
