@@ -62,9 +62,7 @@
 @include('vote.palier')
                         </div>
                         <div class="loadmask"></div>
-                        <div class="loading">
-                            <img src="{{ URL::asset('imgs/loader.gif') }}" />
-                        </div>
+                        <div class="loading"></div>
                     </div>
 @endif
                 </div> <!-- content -->
