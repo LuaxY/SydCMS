@@ -4,7 +4,7 @@ class DofusAPI {
 
     static function get($url)
     {
-        return Config::get('dofus.web-api') . "forge" . $url;
+        return Config::get('dofus.web-api') . "forge/" . $url;
     }
 
     static function text($id)

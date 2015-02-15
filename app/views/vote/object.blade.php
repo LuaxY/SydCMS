@@ -11,7 +11,7 @@
                                 </div>
                                 <div class="vote-gift-description-block">
                                     <div class="object-illu left">
-                                        <img src="{{ DofusAPI::get('/dofus/www/game/items/200/'. $reward->item->IconId .'.png') }}" />
+                                        <img src="{{ DofusAPI::get('dofus/www/game/items/200/'. $reward->item->IconId .'.png') }}" />
                                     </div>
                                     <div class="vote-gift-description right">
                                         <div class="title">
