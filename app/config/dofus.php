@@ -15,7 +15,7 @@ return array (
     'vote' => 10,
 
     // Delay between two vote
-    'vote_delay' => 7260, // 2h and 1 minute to avoid problems
+    'vote_delay' => 10810, // 3h and 1 minute to avoid problems
 
     // Promotions
     'promos' => array(
