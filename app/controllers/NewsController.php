@@ -10,7 +10,7 @@ class NewsController extends \BaseController {
 	 */
 	public function index()
 	{
-		$posts = Post::paginate(6);
+		$posts = Post::orderBy('date', 'desc')->paginate(6);
 
 		return View::make('news.index', compact('posts'));
 	}
