@@ -21,5 +21,8 @@
                         <div class="post-details"></div>
                     </div>
 @endforeach
-                </div> <!-- content -->
+                </div> <!-- news -->
+                <div class="pagination-block">
+                    {{ $posts->links() }}
+                </div>
 @stop

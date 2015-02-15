@@ -1,5 +1,6 @@
 .news {
     width: 870px;
+    overflow: auto;
 }
 
 .post {
@@ -8,6 +9,7 @@
     margin: 0 6px 12px 6px;
     background-color: #F3F2ED;
     transition: box-shadow linear 0.2s;
+
 }
 
 .post:hover {
@@ -123,4 +125,53 @@
 
 .content article img.big-image {
     margin: 37px 0;
+}
+
+.pagination {
+    padding: 12px 0;
+    text-align: center;
+}
+
+.pagination li {
+    display: inline;
+}
+
+.pagination li.disabled {
+    opacity: 1;
+}
+
+.pagination li a,
+.pagination li span {
+    background-color: #e4e0d7;
+    border: 1px solid #b1ac9c;
+    color: #422f14;
+    font-size: 13px;
+    word-spacing: 5px;
+    padding: 6px 12px;
+    line-height: 18px;
+    text-decoration: none;
+    margin-left: -1px;
+}
+
+.pagination li a:hover {
+    background-color: #23a9b5;
+    color: #fff;
+}
+
+.pagination li.active a,
+.pagination li.active a:hover,
+.pagination li.active span,
+.pagination li.active span:hover {
+    background-color: #dfd8cc;
+    border-color: #b1ac9c;
+}
+
+.pagination li.disabled a,
+.pagination li.disabled a:hover,
+.pagination li.disabled span,
+.pagination li.disabled span:hover {
+    background-color: #e4e0d7;
+    color: #373737;
+    border-color: #b1ac9c;
+    cursor: default;
 }
