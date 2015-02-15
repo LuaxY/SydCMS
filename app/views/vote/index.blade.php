@@ -70,6 +70,7 @@
                 <script>
                     $("#vote-gifts .left div[data={{ $palierId }}]").addClass("selected");
                     progress();
+                    showItem({{ $steps[$current]->itemId }}, {{ $current }}, {{ $steps[$current]->votes }});
 
                     $("#vote-gifts .left div").on("click", function() {
                         var self = $(this);
@@ -77,8 +78,8 @@
 
                         $("#vote-gifts").addClass("mask-relative masked");
                         $("#vote-gifts .left .selected").removeClass("selected");
-                        $(".loadmask").show();
-                        $(".loading").show();
+                        $("#vote-gifts > .loadmask").show();
+                        $("#vote-gifts > .loading").show();
 
                         $.ajax({
                             type: "GET",
@@ -87,19 +88,57 @@
                         .done(function(res) {
                             $("#vote-gifts .right").html(res);
 
-                            $(".loadmask").hide();
-                            $(".loading").hide();
+                            $("#vote-gifts > .loadmask").hide();
+                            $("#vote-gifts > .loading").hide();
                             self.addClass("selected");
                             $("#vote-gifts").removeClass("mask-relative masked");
 
                             progress();
+
+                            var item = $("#load-item");
+                            showItem(item.attr("item"), item.attr("step"), item.attr("votes"))
                         });
                     });
 
-                    function progress()
-                    {
+                    $("#vote-gifts .right").on("click", ".vote-reward-step", function() {
+                        var parent = $(this).parent(".vote-reward");
+                        var item = parent.attr("item");
+                        var step = parent.attr("step");
+                        var votes = parent.attr("votes");
+
+                        $(".vote-reward-step.selected").removeClass("selected");
+                        $(this).addClass("selected");
+
+                        showItem(item, step, votes);
+                    });
+
+                    function progress() {
                         var percent = $(".progress-bar").attr("data");
                         $(".progress-bar").animate({width: percent +'%'}, 0, "linear");
+                    }
+
+                    function showItem(item, step, votes) {
+                        $(".vote-gift-details").removeClass("vote-block-1 vote-block-2 vote-block-3 vote-block-4 vote-block-5");
+                        $(".vote-item").addClass("mask-relative masked");
+                        $(".vote-item > .loadmask").show();
+                        $(".vote-item > .loading").show();
+
+                        $.ajax({
+                            type: "GET",
+                            url: "http://localhost/test.json?item="+item,
+                            dataType: "json",
+                        })
+                        .done(function(res) {
+                            $(".vote-item .vote-gift-title-object").html(res.name);
+                            $(".vote-item .vote-gift-description p").html(res.description);
+                            $(".vote-item .object-illu img").attr("src", res.image);
+                            $(".vote-item .vote-reward-text span").html(votes);
+                            $(".vote-item .vote-gift-details").addClass("vote-block-" + step);
+
+                            $(".vote-item").removeClass("mask-relative masked");
+                            $(".vote-item > .loadmask").hide();
+                            $(".vote-item > .loading").hide();
+                        });
                     }
                 </script>
 @stop

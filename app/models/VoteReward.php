@@ -8,6 +8,6 @@ class VoteReward extends \Eloquent {
 
 	public function item()
 	{
-		return $this->hasOne('ItemTemplate', 'Id', 'object');
+		return $this->hasOne('ItemTemplate', 'Id', 'itemId');
 	}
 }

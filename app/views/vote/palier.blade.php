@@ -3,55 +3,22 @@
                                 <div class="progress-bar" data="{{ $progress }}"></div>
                             </div>
                             <div class="vote-time-line">
-                                <div class="vote-reward vote-block-1">
+@foreach ($steps as $i => $step)
+                                <div class="vote-reward vote-block-{{ $i }}" item="{{ $step->itemId }}" step="{{ $i }}" votes="{{ $step->votes }}">
                                     <span class="arrow"></span>
-                                    <a href="" class="selected">
+                                    <div class="vote-reward-step @if ($current == $i) selected @endif">
                                         <span class="vote-reward-text">
-                                            <span>{{ 50 * ($palierId - 1) + 10 }}</span>
+                                            <span>{{ $step->votes }}</span>
                                             votes
                                         </span>
                                         <span class="vote-reward-icon"></span>
-                                    </a>
+                                    </div>
                                 </div>
-                                <div class="vote-reward vote-block-2">
-                                    <span class="arrow"></span>
-                                    <a href="">
-                                        <span class="vote-reward-text">
-                                            <span>{{ 50 * ($palierId - 1) + 20 }}</span>
-                                            votes
-                                        </span>
-                                        <span class="vote-reward-icon"></span>
-                                    </a>
-                                </div>
-                                <div class="vote-reward vote-block-3">
-                                    <span class="arrow"></span>
-                                    <a href="">
-                                        <span class="vote-reward-text">
-                                            <span>{{ 50 * ($palierId - 1) + 30 }}</span>
-                                            votes
-                                        </span>
-                                        <span class="vote-reward-icon"></span>
-                                    </a>
-                                </div>
-                                <div class="vote-reward vote-block-4">
-                                    <span class="arrow"></span>
-                                    <a href="">
-                                        <span class="vote-reward-text">
-                                            <span>{{ 50 * ($palierId - 1) + 40 }}</span>
-                                            votes
-                                        </span>
-                                        <span class="vote-reward-icon"></span>
-                                    </a>
-                                </div>
-                                <div class="vote-reward vote-block-5">
-                                    <span class="arrow"></span>
-                                    <a href="">
-                                        <span class="vote-reward-text">
-                                            <span>{{ 50 * ($palierId - 1) + 50 }}</span>
-                                            votes
-                                        </span>
-                                        <span class="vote-reward-icon big"></span>
-                                    </a>
-                                </div>
+@endforeach
                             </div>
+                            <div class="vote-item mask-relative masked">
 @include('vote.object')
+                                <div class="loadmask" style="display: block;"></div>
+                                <div class="loading" style="display: block; top: 100px;"></div>
+                            </div>
+                            <div id="load-item" item="{{ $steps[$current]->itemId }}" step="{{ $current }}" votes="{{ $steps[$current]->votes }}"></div>

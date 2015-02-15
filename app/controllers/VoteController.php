@@ -6,13 +6,13 @@ class VoteController extends \BaseController {
 
 	public function index()
 	{
-		$palierId = intval($this->votes / 50) + 1;
-		$votesCount = $this->votes;
-		$giftsCount = intval($votesCount / 10);
-		$nextGifts = 10 - ($votesCount % 10);
-		$progress = ($votesCount - (($palierId - 1) * 50)) * 100 / 50;
-		$progress = $progress > 100 ? 100 : $progress;
-		$reward = VoteReward::where('step', 10)->firstOrFail();
+		$palierId = $this->palierId();
+		$votesCount = $this->userVotes();
+		$giftsCount = $this->giftsCount();
+		$nextGifts = $this->nextGift();
+		$progress = $this->progressBar($palierId);
+		$steps = $this->stepsList($palierId);
+		$current = 1;
 
 		$data = array(
 			"palierId"   => $palierId,
@@ -20,7 +20,9 @@ class VoteController extends \BaseController {
 			"giftsCount" => $giftsCount,
 			"nextGifts"  => $nextGifts,
 			"progress"   => $progress,
-			"reward"     => $reward,
+			"steps"	     => $steps,
+			"reward"     => $steps[1],
+			"current"    => $current,
 		);
 
 		return View::make('vote.index', $data);
@@ -39,15 +41,17 @@ class VoteController extends \BaseController {
 		if ($id < 1 || $id > 5)
 			$id = 1;
 
-		$votesCount = $this->votes;
-		$progress = ($votesCount - (($id - 1) * 50)) * 100 / 50;
-		$progress = $progress > 100 ? 100 : $progress;
-		$reward = VoteReward::where('step', 10)->firstOrFail();
+		$votesCount = $this->userVotes();
+		$progress = $this->progressBar($id);
+		$steps = $this->stepsList($id);
+		$current = 1;
 
 		$data = array(
 			"palierId" => $id,
 			"progress" => $progress,
-			"reward"   => $reward,
+			"steps"	   => $steps,
+			"reward"   => $steps[1],
+			"current"  => $current,
 		);
 
 		return View::make('vote.palier', $data);
@@ -64,6 +68,43 @@ class VoteController extends \BaseController {
 		$reward = VoteReward::where('step', 10)->firstOrFail();
 
 		return View::make('vote.object', compact('reward'));
+	}
+
+	private function userVotes()
+	{
+		return 62;
+	}
+
+	private function palierId()
+	{
+		return intval($this->userVotes() / 50) + 1;
+	}
+
+	private function giftsCount()
+	{
+		return intval($this->userVotes() / 10);
+	}
+
+	private function nextGift()
+	{
+		return 10 - ($this->userVotes() % 10);
+	}
+
+	private function progressBar($palierId)
+	{
+		$progress = ($this->userVotes() - (($palierId - 1) * 50)) * 100 / 50;
+		return $progress > 100 ? 100 : $progress;
+	}
+
+	private function stepsList($palierId)
+	{
+		return array(
+			1 => VoteReward::where('votes', 50 * ($palierId - 1) + 10)->firstOrFail(),
+			2 => VoteReward::where('votes', 50 * ($palierId - 1) + 20)->firstOrFail(),
+			3 => VoteReward::where('votes', 50 * ($palierId - 1) + 30)->firstOrFail(),
+			4 => VoteReward::where('votes', 50 * ($palierId - 1) + 40)->firstOrFail(),
+			5 => VoteReward::where('votes', 50 * ($palierId - 1) + 50)->firstOrFail(),
+		);
 	}
 
 }

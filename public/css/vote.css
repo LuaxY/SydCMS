@@ -176,7 +176,7 @@
     background: url('../imgs/separator-time-line.png') center center no-repeat;;
 }
 
-#vote-gifts .vote-time-line .vote-reward a {
+#vote-gifts .vote-time-line .vote-reward .vote-reward-step {
     text-align: center;
     text-decoration: none;
     padding: 15px 10px;
@@ -184,15 +184,16 @@
     border-right: 1px solid #33322e;
     border-left: 1px solid #33322e;
     float: right;
+    cursor: pointer;
 }
 
-#vote-gifts .vote-time-line .vote-reward a:hover,
-#vote-gifts .vote-time-line .vote-reward a.selected {
+#vote-gifts .vote-time-line .vote-reward .vote-reward-step:hover,
+#vote-gifts .vote-time-line .vote-reward .vote-reward-step.selected {
     background: #3b3a35;
     color: transparent;
 }
 
-#vote-gifts .vote-time-line .vote-reward a.selected::after {
+#vote-gifts .vote-time-line .vote-reward .vote-reward-step.selected::after {
     content: " ";
     display: block;
     position: absolute;
