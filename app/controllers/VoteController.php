@@ -12,7 +12,7 @@ class VoteController extends \BaseController {
 		$nextGifts = $this->nextGift();
 		$progress = $this->progressBar($palierId);
 		$steps = $this->stepsList($palierId);
-		$current = 1;
+		$current = (($votesCount + $nextGifts) / 10) % 5;
 		$delay = $this->delay();
 
 		$data = array(
@@ -22,7 +22,6 @@ class VoteController extends \BaseController {
 			"nextGifts"  => $nextGifts,
 			"progress"   => $progress,
 			"steps"	     => $steps,
-			"reward"     => $steps[1],
 			"current"    => $current,
 			"delay"      => $delay,
 		);
@@ -64,13 +63,12 @@ class VoteController extends \BaseController {
 		$votesCount = $this->userVotes();
 		$progress = $this->progressBar($id);
 		$steps = $this->stepsList($id);
-		$current = 1;
+		$current = 5;
 
 		$data = array(
 			"palierId" => $id,
 			"progress" => $progress,
 			"steps"	   => $steps,
-			"reward"   => $steps[1],
 			"current"  => $current,
 		);
 

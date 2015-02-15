@@ -146,8 +146,8 @@
     display: block;
     font-family: 'Bebas Neue', sans-serif;
     font-weight: 400;
-    height: 29px;
-    padding: 0 10px;
+    height: 30px;
+    padding: 2px 10px 0 10px;
     text-align: center;
     border-right: 1px solid #dddac8;
 }
