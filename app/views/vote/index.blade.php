@@ -122,19 +122,23 @@
                         $(".vote-item > .loadmask").show();
                         $(".vote-item > .loading").show();
 
+                        $(".vote-item .vote-gift-title-object").html("");
+                        $(".vote-item .vote-gift-description p").html("");
+                        $(".vote-item .object-illu img").attr("src", "");
+                        $(".vote-gift-details").removeClass("vote-block-1 vote-block-2 vote-block-3 vote-block-4 vote-block-5");
+
+                        $(".vote-item .vote-reward-text span").html(votes);
+                        $(".vote-item .vote-gift-details").addClass("vote-block-" + step);
+
                         $.ajax({
                             type: "GET",
                             url: "{{ URL::route('vote.object') }}/" + item,
                             dataType: "json",
                         })
                         .done(function(res) {
-                            $(".vote-gift-details").removeClass("vote-block-1 vote-block-2 vote-block-3 vote-block-4 vote-block-5");
-
                             $(".vote-item .vote-gift-title-object").html(res.name);
                             $(".vote-item .vote-gift-description p").html(res.description);
                             $(".vote-item .object-illu img").attr("src", res.image);
-                            $(".vote-item .vote-reward-text span").html(votes);
-                            $(".vote-item .vote-gift-details").addClass("vote-block-" + step);
 
                             $(".vote-item").removeClass("mask-relative masked");
                             $(".vote-item > .loadmask").hide();
