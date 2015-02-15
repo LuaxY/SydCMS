@@ -14,6 +14,9 @@ return array (
     // Base points for vote
     'vote' => 10,
 
+    // Delay between two vote
+    'vote_delay' => 7260, // 2h and 1 minute to avoid problems
+
     // Promotions
     'promos' => array(
         'fr|sms' => 20,

@@ -44,7 +44,11 @@
                     </div>
                     <div id="vote-process">
                         <div class="left">
-                            <a class="vote-link" href="{{ URL::route('vote.process') }}">Voter</a>
+@if ($delay->canVote)
+                            <a class="vote-link" href="{{ URL::route('vote.process') }}" target="_blank">Voter</a>
+@else
+                            <p><b>Vous devez attendre {{ $delay->hours }}h {{ $delay->minutes }}m {{ $delay->seconds }}s avant de pouvoir re-voter.</b></p>
+@endif
                         </div>
                         <div class="right">
                             Chaque vote permet d'obtenir {{ Config::get('dofus.vote') }} ogrines.<br>Touts les 10 votes vous gagnez un nouveau cadeau.
@@ -110,6 +114,12 @@
                         $(this).addClass("selected");
 
                         showItem(item, step, votes);
+                    });
+
+                    $(".vote-link").on("click", function() {
+                        setTimeout(function() {
+                            location.reload();
+                        }, 2500);
                     });
 
                     function progress() {

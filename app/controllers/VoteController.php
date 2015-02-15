@@ -13,6 +13,7 @@ class VoteController extends \BaseController {
 		$progress = $this->progressBar($palierId);
 		$steps = $this->stepsList($palierId);
 		$current = 1;
+		$delay = $this->delay();
 
 		$data = array(
 			"palierId"   => $palierId,
@@ -23,6 +24,7 @@ class VoteController extends \BaseController {
 			"steps"	     => $steps,
 			"reward"     => $steps[1],
 			"current"    => $current,
+			"delay"      => $delay,
 		);
 
 		return View::make('vote.index', $data);
@@ -30,8 +32,26 @@ class VoteController extends \BaseController {
 
 	public function process()
 	{
-		// TODO: check last vote
-		//       add gift
+		$delay = $this->delay();
+
+		if (!$delay->canVote)
+			return $this->index();
+
+		Auth::user()->VoteCount += 1;
+		Auth::user()->NewTokens += 10;
+
+		Auth::user()->update(array(
+			'VoteCount' => Auth::user()->VoteCount,
+			'NewTokens' => Auth::user()->NewTokens,
+			'LastVote'  => date("Y-m-d H:i:s"),
+		));
+
+		if (Auth::user()->VoteCount % 10 == 0)
+		{
+			$reward = VoteReward::where('votes', Auth::user()->VoteCount)->firstOrFail();
+
+			// TODO: add $reward->itemId to account
+		}
 
 		return Redirect::to("http://www.rpg-paradize.com/?page=vote&vote=" . Config::get("dofus.rpg-paradize.id"));
 	}
@@ -72,7 +92,7 @@ class VoteController extends \BaseController {
 
 	private function userVotes()
 	{
-		return 62;
+		return Auth::user()->VoteCount;
 	}
 
 	private function palierId()
@@ -105,6 +125,21 @@ class VoteController extends \BaseController {
 			4 => VoteReward::where('votes', 50 * ($palierId - 1) + 40)->firstOrFail(),
 			5 => VoteReward::where('votes', 50 * ($palierId - 1) + 50)->firstOrFail(),
 		);
+	}
+
+	private function delay()
+	{
+		$obj = new stdClass();
+
+		$obj->now = strtotime(date("Y-m-d H:i:s"));
+		$obj->duration = $obj->now - strtotime(Auth::user()->LastVote);
+		$obj->canVote = $obj->duration < Config::get("dofus.vote_delay") ? false : true;
+		$obj->wait = Config::get("dofus.vote_delay") - $obj->duration;
+		$obj->hours = intval($obj->wait / 3600);
+		$obj->minutes = intval(($obj->wait % 3600) / 60);
+		$obj->seconds = intval((($obj->wait % 3600) % 60));
+
+		return $obj;
 	}
 
 }

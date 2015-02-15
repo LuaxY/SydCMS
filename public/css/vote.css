@@ -83,6 +83,10 @@
     width: 50%;
 }
 
+#vote-process .left p {
+    padding: 28px 20px;
+}
+
 #vote-process .right {
     width: 50%;
     text-align: justify;
