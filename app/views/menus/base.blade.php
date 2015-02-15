@@ -32,7 +32,7 @@
                         <span class="icon-medplus icon-pets"></span>Mon compte
                     </div>
                     <div class="panel-content account">
-                        <div class="account-avatar"><img src="{{ URL::asset('imgs/avatar/94.png') }}" /></div>
+                        <div class="account-avatar"><img src="@if (Auth::user()->Nickname == "Luax"){{ URL::asset('imgs/avatar/Kerubim.png') }}@else{{ URL::asset('imgs/avatar/94.png') }}@endif" /></div>
                         <div class="account-details">
                             <div class="account-name">{{ Auth::user()->Nickname }}</div>
                             <div class="account-info">
@@ -71,7 +71,7 @@
                         <ul class="level-2">
                             <li><img src="{{ URL::asset('imgs/icons/tournois.png') }}"> Combats</li>
                             <li><img src="{{ URL::asset('imgs/icons/champions.png') }}"> Champions</li>
-                            <li><img src="{{ URL::asset('imgs/icons/kamas.png') }}"> Résultas</li>
+                            <li><img src="{{ URL::asset('imgs/icons/kamas.png') }}"> Résultats</li>
                         </ul>
                         <div class="level-1">
                             <a href="#" class="title">Divers</a>

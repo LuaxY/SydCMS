@@ -35,32 +35,53 @@
     border-bottom-color: #F28E00;
 }
 
+.post.info .post-comments-count a,
 .post.info .post-info .post-date a {
     color: #F28E00;
+}
+
+.post.info .post-comments-count a svg path {
+    fill: #F28E00;
 }
 
 .post.event .post-image img {
     border-bottom-color: #0257A9;
 }
 
+.post.event .post-comments-count a,
 .post.event .post-info .post-date a {
     color: #0257A9;
+}
+
+.post.event .post-comments-count a svg path {
+    fill: #0257A9;
 }
 
 .post.dev .post-image img {
     border-bottom-color: #97A800;
 }
 
+
+.post.dev .post-comments-count a,
 .post.dev .post-info .post-date a {
     color: #97A800;
+}
+
+.post.dev .post-comments-count a svg path {
+    fill: #97A800;
 }
 
 .post.other .post-image img {
     border-bottom-color: #383737;;
 }
 
+.post.other .post-comments-count a,
 .post.other .post-info .post-date a {
     color: #383737;
+}
+
+.post.other .post-comments-count a svg path {
+    fill: #383737;
 }
 
 .post .post-info {
@@ -117,6 +138,37 @@
 .post .post-details {
     height: 32px;
     border-top: 1px solid #DDDAC8;
+}
+
+.post .post-comments-count {
+    font-size: 23px;
+    border-bottom: medium none;
+    display: block;
+    font-family: 'Bebas Neue', sans-serif;
+    font-weight: 400;
+    height: 29px;
+    padding: 0 10px;
+    text-align: center;
+    border-right: 1px solid #dddac8;
+}
+
+.post .post-comments-count a {
+    text-decoration: none;
+}
+
+.post .post-comments-count a svg {
+    width: 13px;
+    height: 13px;
+    display: inline-block;
+}
+
+.post .post-comments-count a span {
+    font-size: 15px;
+    display: inline-block;
+    font-weight: 400;
+    line-height: 1.2em;
+    position: relative;
+    top: -2px;
 }
 
 .content article {

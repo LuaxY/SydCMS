@@ -22,7 +22,7 @@ class NewsController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id, $slug = null)
+	public function show($id, $slug)
 	{
 		$post = Post::findOrFail($id);
 

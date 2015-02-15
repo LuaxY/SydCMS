@@ -51,7 +51,7 @@
 @endif
                         </div>
                         <div class="right">
-                            Chaque vote permet d'obtenir {{ Config::get('dofus.vote') }} ogrines.<br>Touts les 10 votes vous gagnez un nouveau cadeau.
+                            Chaque vote permet d'obtenir {{ Config::get('dofus.vote') }} ogrines.<br>Tous les 10 votes vous gagnez un nouveau cadeau.
                         </div>
                     </div>
                     <div id="vote-gifts">
