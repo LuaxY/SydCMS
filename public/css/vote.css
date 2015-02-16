@@ -177,7 +177,7 @@
     left: 15px;
     display: block;
     position: relative;
-    background: url('../imgs/separator-time-line.png') center center no-repeat;;
+    background: url('../imgs/separator-time-line.png') center center no-repeat;
 }
 
 #vote-gifts .vote-time-line .vote-reward .vote-reward-step {

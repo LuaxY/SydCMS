@@ -8,7 +8,7 @@
 @section('content')
                 <div class="content">
                     <h1 class="content-title">
-                        <span class="icon-big icon-gift"></span> Votez pour le serveur
+                        <span class="icon-big icon-gift"></span> Vote pour le serveur
                     </h1>
 @if (Auth::guest())
                     <div id="vote-process">

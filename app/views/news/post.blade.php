@@ -18,4 +18,54 @@
                         {{ $post->content }}
                     </article>
                 </div> <!-- content -->
+
+                <div class="content comments">
+                    <div class="title title-arrow">Commentaires (3)</div>
+                    <div class="comments-list">
+
+                        <div class="comment">
+                            <div class="comment-avatar">
+                                <div class="author-image"><img src="{{ URL::asset('imgs/avatar/default.jpg') }}" /></div>
+                                <div class="author-tag">Joueur</div>
+                            </div>
+                            <div class="comment-content">
+                                <div class="author-name">
+                                    <strong>Luax</strong>
+                                    <small>16 Février 2015 16:03</small>
+                                </div>
+                                <div class="comment-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In iaculis elementum elit, a condimentum dui convallis et. Sed aliquam aliquet libero, non iaculis ante venenatis dignissim. Curabitur eu felis ac eros auctor auctor quis ut est. Mauris et vehicula velit, eget tincidunt nulla. Pellentesque commodo dolor id mollis dictum. Donec ultrices eleifend dignissim. Fusce finibus, diam vitae molestie posuere, tellus nisi viverra quam, a cursus ligula lorem eu tellus. Duis a magna nisi. Donec ac arcu id metus mollis ultrices. Mauris sodales eleifend enim, at consequat felis. Integer rutrum dapibus nibh, eu bibendum justo ultricies quis. Nam cursus ultricies sapien sed laoreet. Nam nisl elit, aliquet nec sapien at, mattis pharetra sapien.</div>
+                            </div>
+                        </div>
+
+                        <div class="comment">
+                            <div class="comment-avatar">
+                                <div class="author-image"><img src="{{ URL::asset('imgs/avatar/default.jpg') }}" /></div>
+                                <div class="author-tag">Joueur</div>
+                            </div>
+                            <div class="comment-content">
+                                <div class="author-name">
+                                    <strong>Luax</strong>
+                                    <small>16 Février 2015 16:03</small>
+                                </div>
+                                <div class="comment-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In iaculis elementum elit, a condimentum dui convallis et. Sed aliquam aliquet libero, non iaculis ante venenatis dignissim. Curabitur eu felis ac eros auctor auctor quis ut est. Mauris et vehicula velit, eget tincidunt nulla. Pellentesque commodo dolor id mollis dictum. Donec ultrices eleifend dignissim. Fusce finibus, diam vitae molestie posuere, tellus nisi viverra quam, a cursus ligula lorem eu tellus. Duis a magna nisi. Donec ac arcu id metus mollis ultrices. Mauris sodales eleifend enim, at consequat felis. Integer rutrum dapibus nibh, eu bibendum justo ultricies quis. Nam cursus ultricies sapien sed laoreet. Nam nisl elit, aliquet nec sapien at, mattis pharetra sapien.</div>
+                            </div>
+                        </div>
+
+                        <div class="comment">
+                            <div class="comment-avatar">
+                                <div class="author-image"><img src="{{ URL::asset('imgs/avatar/default.jpg') }}" /></div>
+                                <div class="author-tag">Joueur</div>
+                            </div>
+                            <div class="comment-content">
+                                <div class="author-name">
+                                    <strong>Luax</strong>
+                                    <small>16 Février 2015 16:03</small>
+                                </div>
+                                <div class="comment-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In iaculis elementum elit, a condimentum dui convallis et. Sed aliquam aliquet libero, non iaculis ante venenatis dignissim. Curabitur eu felis ac eros auctor auctor quis ut est. Mauris et vehicula velit, eget tincidunt nulla. Pellentesque commodo dolor id mollis dictum. Donec ultrices eleifend dignissim. Fusce finibus, diam vitae molestie posuere, tellus nisi viverra quam, a cursus ligula lorem eu tellus. Duis a magna nisi. Donec ac arcu id metus mollis ultrices. Mauris sodales eleifend enim, at consequat felis. Integer rutrum dapibus nibh, eu bibendum justo ultricies quis. Nam cursus ultricies sapien sed laoreet. Nam nisl elit, aliquet nec sapien at, mattis pharetra sapien.</div>
+                            </div>
+                        </div>
+
+                    </div>
+                    &nbsp;
+                </div> <!-- content -->
 @stop

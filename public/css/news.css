@@ -227,3 +227,97 @@
     border-color: #b1ac9c;
     cursor: default;
 }
+
+.comments {
+    background: #fff;
+}
+
+.comments:before {
+    position: relative;
+    display: block;
+    border-top: 5px solid #d2cfc5;;
+    content: " ";
+}
+
+.comments .title {
+    margin-top: 12px;
+}
+
+.title-arrow {
+    background: url('../imgs/title-arrow.png') 0 4px no-repeat;
+    padding-left: 12px;
+    text-indent: 0;
+}
+
+.comments .comments-list {
+    background: #f8f8f6;
+}
+
+.comments .comment {
+    padding: 0 0 0 20px;
+    border-top: 1px solid #dbd8cd;
+    clear: both;
+    position: relative;
+    min-height: 160px;
+    overflow: auto;
+}
+
+.comments .comment:last-child {
+    border-bottom: 1px solid #dbd8cd;
+}
+
+.comments .comment .comment-avatar {
+    padding: 20px 20px 20px 0;
+    text-align: right;
+    float: left;
+    position: relative;
+    min-height: 159px;
+    width: 130px;
+}
+
+.comments .comment .comment-avatar .author-image {
+    padding-left: 18px;
+}
+
+.comments .comment .comment-avatar .author-image img {
+    border: 5px solid #cdbe9f;
+    height: 62px;
+    width: 62px;
+}
+
+.comments .comment .comment-avatar .author-tag {
+    font-size: 13px;
+    max-width: 85px;
+    text-align: center;
+    margin: 0 0;
+    float: right;
+    overflow: hidden;
+}
+
+.comments .comment .comment-content {
+    overflow: hidden;
+    min-height: 159px;
+    width: 720px;
+    float: left;
+}
+
+.comments .comment .comment-content .author-name {
+    padding: 15px 8px;
+}
+
+.comments .comment .comment-content .author-name strong {
+    color: #064E68;
+}
+
+.comments .comment .comment-content .author-name small {
+    font-size: 11px;
+    line-height: 15px;
+    padding-left: 5px;
+    border-left: 1px solid;
+    color: #7f7b68;
+}
+
+.comments .comment .comment-content .comment-text {
+    padding: 0 8px 15px;
+    font-size: 13px;
+}
