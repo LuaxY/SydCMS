@@ -85,10 +85,23 @@
 }
 
 .post .post-info {
-    height: 66px;
+    height: 64px;
     overflow: hidden;
     background-color: #FFFFFF;
     padding: 5px;
+}
+
+.post .post-info .post-avatar {
+    float: left;
+}
+
+.post .post-info .post-avatar img {
+    width: 53px;
+}
+
+.post .post-info .post-info-details {
+    float: left;
+    margin-left: 10px;
 }
 
 .post .post-info .post-title a {

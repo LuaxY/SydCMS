@@ -13,8 +13,11 @@
                             <a href="{{ URL::route('news.post', array($post->id, $post->slug)) }}"><img src="{{ URL::asset($post->image) }}" alt="{{ $post->title }}" /></a>
                         </div>
                         <div class="post-info">
-                            <div class="post-title"><a href="{{ URL::route('news.post', array($post->id, $post->slug)) }}">{{ $post->title }}</a></div>
-                            <div class="post-date"><a href="">@lang('categories.' . $post->type)</a> - {{ date('d F Y', strtotime($post->date)) }}</div>
+                            <div class="post-avatar"><img src="{{ URL::asset($post->author->Avatar) }}" /></div>
+                            <div class="post-info-details">
+                                <div class="post-title"><a href="{{ URL::route('news.post', array($post->id, $post->slug)) }}">{{ $post->title }}</a></div>
+                                <div class="post-date"><a href="">@lang('categories.' . $post->type)</a> - {{ date('d F Y', strtotime($post->date)) }}</div>
+                            </div>
                         </div>
                         <div class="post-content">{{ $post->preview }}</div>
                         <div class="post-ellipsis"></div>
