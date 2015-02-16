@@ -280,7 +280,7 @@
 }
 
 .comments .comment .comment-avatar {
-    padding: 20px 20px 20px 0;
+    padding: 20px 20px 20px 10px;
     text-align: right;
     float: left;
     position: relative;
@@ -333,4 +333,43 @@
 .comments .comment .comment-content .comment-text {
     padding: 0 8px 15px;
     font-size: 13px;
+}
+
+.comments .comment.admin,
+.comments .comment.dev,
+.comments .comment.staff {
+    background: url('../imgs/bg-staff.jpg');
+}
+
+.comments .comment.admin .comment-avatar .author-image,
+.comments .comment.dev .comment-avatar .author-image,
+.comments .comment.staff .comment-avatar .author-image {
+    background: url('../imgs/picto-admin.png') center center no-repeat;
+}
+
+.comments .comment.admin .comment-avatar .author-image {
+    background-color: #f2d214;
+    background-position: -28px center;
+}
+
+.comments .comment.admin .comment-avatar .author-image img {
+    border: 5px solid #f2d214;
+}
+
+.comments .comment.dev .comment-avatar .author-image {
+    background-color: #5a5a5a;
+    background-position: -67px center;
+}
+
+.comments .comment.dev .comment-avatar .author-image img {
+    border: 5px solid #5a5a5a;
+}
+
+.comments .comment.staff .comment-avatar .author-image {
+    background-color: #21A3D3;
+    background-position: 11px center;
+}
+
+.comments .comment.staff .comment-avatar .author-image img {
+    border: 5px solid #21A3D3;
 }
