@@ -37,20 +37,6 @@
                             </div>
                         </div>
 
-                        <div class="comment dev">
-                            <div class="comment-avatar">
-                                <div class="author-image"><img src="{{ URL::asset('imgs/avatar/Kerubim.png') }}" /></div>
-                                <div class="author-tag">Dev</div>
-                            </div>
-                            <div class="comment-content">
-                                <div class="author-name">
-                                    <strong>Luax</strong>
-                                    <small>16 Février 2015 16:03</small>
-                                </div>
-                                <div class="comment-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In iaculis elementum elit, a condimentum dui convallis et. Sed aliquam aliquet libero, non iaculis ante venenatis dignissim. Curabitur eu felis ac eros auctor auctor quis ut est. Mauris et vehicula velit, eget tincidunt nulla. Pellentesque commodo dolor id mollis dictum. Donec ultrices eleifend dignissim. Fusce finibus, diam vitae molestie posuere, tellus nisi viverra quam, a cursus ligula lorem eu tellus.</div>
-                            </div>
-                        </div>
-
                         <div class="comment">
                             <div class="comment-avatar">
                                 <div class="author-image"><img src="{{ URL::asset('imgs/avatar/default.jpg') }}" /></div>
@@ -68,7 +54,10 @@
                         <div class="comment admin">
                             <div class="comment-avatar">
                                 <div class="author-image"><img src="{{ URL::asset('imgs/avatar/Kerubim.png') }}" /></div>
-                                <div class="author-tag">Admin</div>
+                                <div class="author-tag">
+                                    <strong>Erezia staff</strong>
+                                    Dev web
+                                </div>
                             </div>
                             <div class="comment-content">
                                 <div class="author-name">
@@ -96,7 +85,10 @@
                         <div class="comment staff">
                             <div class="comment-avatar">
                                 <div class="author-image"><img src="{{ URL::asset('imgs/avatar/Kerubim.png') }}" /></div>
-                                <div class="author-tag">Staff</div>
+                                <div class="author-tag">
+                                    <strong>Erezia staff</strong>
+                                    Modérateur
+                                </div>
                             </div>
                             <div class="comment-content">
                                 <div class="author-name">

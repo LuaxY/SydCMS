@@ -280,7 +280,7 @@
 }
 
 .comments .comment .comment-avatar {
-    padding: 20px 20px 20px 10px;
+    padding: 20px 20px 20px 15px;
     text-align: right;
     float: left;
     position: relative;
@@ -290,6 +290,7 @@
 
 .comments .comment .comment-avatar .author-image {
     padding-left: 18px;
+    margin-bottom: 5px;
 }
 
 .comments .comment .comment-avatar .author-image img {
@@ -372,4 +373,11 @@
 
 .comments .comment.staff .comment-avatar .author-image img {
     border: 5px solid #21A3D3;
+}
+
+.comments .comment.admin .comment-avatar .author-tag,
+.comments .comment.dev .comment-avatar .author-tag,
+.comments .comment.staff .comment-avatar .author-tag {
+    color: #7f7b68;
+    text-align: right;
 }
