@@ -6,6 +6,9 @@ class VoteController extends \BaseController {
 
 	public function index()
 	{
+		if (Auth::guest())
+			return View::make('vote.index');
+
 		$palierId = $this->palierId();
 		$votesCount = $this->userVotes();
 		$giftsCount = $this->giftsCount();
