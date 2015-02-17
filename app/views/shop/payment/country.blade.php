@@ -17,7 +17,7 @@
                                 <span class="picto"></span> Choisissez votre pays
                             </div>
                             <div class="shop-country">
-@foreach ($starpass as $country => $data)
+@foreach ($payment as $country => $data)
                                 <a href="{{ URL::route('shop.payment.method', $country) }}" title="{{ $country }}"><span class="icon-flag flag-{{ $country }}"></span></a>
 @endforeach
                             </div>

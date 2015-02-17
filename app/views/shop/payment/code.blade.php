@@ -14,32 +14,24 @@
                     <div class="shop">
                         <div class="shop-content">
                             <div class="title">
-                                <span class="picto"></span> Paiement par {{ $method }} &nbsp;<span class="icon-flag flag-{{ $country }}"></span>
+                                <span class="picto"></span> Paiement par {{ $method }} pour {{ $palier }} Ogrines &nbsp;<span class="icon-flag flag-{{ $country }}"></span>
                             </div>
                             <div class="payment">
                                 <div class="payment-info left">
 @if ($method == 'audiotel' || $method == 'mobilecall')
                                     Pour obtenir votre code, appelez le
-                                    <div class="payment-number">{{ $starpass->audiotelPhone }}</div>
-                                    <div class="payment-cost">
-                                        La communication vous sera facturée :<br />
-                                        {{ $starpass->audiotelFixedCostDetail }}/appel {{ $starpass->audiotelVariableCostDetail }}/min depuis une ligne fixe<br />
-                                        Obtention du code en < 1,30 min. Coût : {{ $starpass->fCostPerAction + (substr($starpass->audiotelVariableCostDetail, 2, 5) * 1.5) }} {{ $starpass->sCurrencyToDisplay }}
-                                    </div>
+                                    <div class="payment-number">{{ $payment->number }}</div>
 @elseif ($method == 'sms')
-                                    <div class="payment-number">Envoyer <b>{{ $starpass->smsKeyword }}</b> au <b>{{ $starpass->smsPhoneNumber }}</b></div>
-                                    <div class="payment-cost">
-                                        {{ $starpass->smsCostDetail }}/SMS + prix d'un SMS<br />
-                                        1 envoi de SMS par code d'accès
-                                    </div>
+                                    <div class="payment-number">Envoyer <b>{{ $payment->keyword }}</b> au <b>{{ $payment->number }}</b></div>
 @endif
+                                    <div class="payment-cost">{{ $payment->text }}</div>
                                 </div>
                                 <div class="right" style="text-align: right;">
                                     En cas de problème, veuillez contacter le <a href="#">support</a>
                                     <div class="payment-code form-group">
                                         {{ Form::open(array('route' => 'shop.payment.process')) }}
                                             <input type="hidden" name="country" value="{{ $country }}" />
-                                            <input type="hidden" name="method" value="{{ $method }}" />
+                                            <input type="hidden" name="method" value="{{ $method }}-{{ $palier }}" />
                                             <input type="hidden" name="cgv" value="{{ $cgv }}" />
                                             @if ($errors->has('code')) <div class="input-error">{{ $errors->first('code') }}</div> @endif
                                             Entrez votre code : <input type="text" name="code" value="{{ Input::old('code') }}" @if ($errors->has('code')) class="has-error" @endif />
@@ -68,7 +60,7 @@
 
                                 <div class="hr"></div>
 
-                                <p class="legal">Votre paiement au serveur {{ $server_name }} sera assuré par ePayment GmbH. Utiliser un moyen de paiement à l'insu de son propriétaire ou contester indûment un paiement sont des délits sanctionnés dans le monde entier. {{ $server_name }} et ses représentants se réservent le droit de poursuivre tout contrevenant.</p>
+                                <p class="legal">Votre paiement au serveur {{ $server_name }} sera assuré par {{ Config::get('dofus.payment.' . Config::get('dofus.payment.used') . '.name') }}. Utiliser un moyen de paiement à l'insu de son propriétaire ou contester indûment un paiement sont des délits sanctionnés dans le monde entier. {{ $server_name }} et ses représentants se réservent le droit de poursuivre tout contrevenant.</p>
                             </div>
                         </div>
                     </div> <!-- shop -->

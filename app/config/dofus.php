@@ -19,16 +19,32 @@ return array (
 
     // Promotions
     'promos' => array(
-        'fr|sms' => 20,
+        /*'fr|sms' => 20,
         'fd|audiotel' => 20,
         'ca|audiotel' => 30,
-        'ca|mobilecall' => 30,
+        'ca|mobilecall' => 30,*/
     ),
 
-    // Starpass IDs
-    'starpass' => array(
-        'idp' => 137990,
-        'idd' => 267769,
+    // Payments options
+    'payment' => array(
+        'used' => 'oneopay', // starpass, oneopay
+
+        'starpass' => array(
+            "name"       => 'Starpass',
+            'url'        => 'starpass.json',
+            'validation' => 'http://script.starpass.fr/check_php.php?ident={ID}&codes={CODE}DATAS=',
+            'idp'        => 137990,
+            'idd'        => 267769,
+        ),
+
+        'oneopay' => array(
+            "name"       => 'OneoPay',
+            //'url'        => 'http://oneopay.com/api/rates.php?service=15',
+            'url'        => 'oneopay.json',
+            'validation' => 'https://oneopay.com/api/checkcode.php?service=1&rate={ID}&code={CODE}',
+            'id'         => 15,
+            'secret'     => '',
+        ),
     ),
 
     // RPG Paradize Top Vote

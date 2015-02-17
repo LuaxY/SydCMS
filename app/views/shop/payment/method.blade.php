@@ -18,22 +18,24 @@
                                 <div class="title">
                                     <span class="picto"></span> Choisissez votre mode de paiement &nbsp;<span class="icon-flag flag-{{ $country }}"></span>
                                 </div>
-@foreach ($starpass as $method => $data)
+@foreach ($payment as $methodName => $method)
+@foreach ($method as $points => $data)
                                 <label>
                                     <div class="shop-element">
-                                        <input type="radio" name="method" value="{{ $method }}" />
+                                        <input type="radio" name="method" value="{{ $methodName }}-{{ $points }}" />
                                         <span class="shop-element-description">
-                                            <span class="shop-icon"><img src="{{ URL::asset('imgs/shop/payment/' . $method . '.png') }}" /></span>
-                                            <span class="shop-name">Code {{ $method }} : <span>1 code</span></span>
+                                            <span class="shop-icon"><img src="{{ URL::asset('imgs/shop/payment/' . $methodName . '.png') }}" /></span>
+                                            <span class="shop-name">Code {{ $methodName }} : <span>{{ $points }} - {{ $data->cost }}</span></span>
                                         </span>
-@if ( array_key_exists($country . '|' . $method, Config::get('dofus.promos')) )
+@if ( array_key_exists($country . '|' . $methodName, Config::get('dofus.promos')) )
                                         <div class="shop-promo">
                                             <span class="promo-title">Promo</span>
-                                            <span class="promo-desc">+ {{ Config::get('dofus.promos')[$country . '|' . $method] }} ogrines offerts pour un achat par {{ $method }}</span>
+                                            <span class="promo-desc">+ {{ Config::get('dofus.promos')[$country . '|' . $methodName] }} ogrines offerts pour un achat par {{ $methodName }}</span>
                                         </div>
 @endif
                                     </div>
                                 </label>
+@endforeach
 @endforeach
                                 <label>
                                     <div class="shop-element unavailable">
@@ -55,14 +57,15 @@
                                 </label>
 
                                 @if ($errors->has('country')) <div class="input-error">{{ $errors->first('country') }}</div> @endif
-                                @if ($errors->has('method')) <div class="input-error">{{ $errors->first('method') }}</div> @endif
+                                @if ($errors->has('method_')) <div class="input-error">{{ $errors->first('method_') }}</div> @endif
+                                @if ($errors->has('palier')) <div class="input-error">{{ $errors->first('palier') }}</div> @endif
                             </div>
 
                             <div class="shop-content cgv">
                                 <div class="checkbox">
                                     <label>
                                         @if ($errors->has('cgv')) <span class="input-error">{{ $errors->first('cgv') }}</span><br /> @endif
-                                        <input type="checkbox" name="cgv" value="1" /> En cochant cette case, vous acceptez expressément que la fourniture du contenu numérique ({{ $points }} ogrines) commence immédiatement après l'envoi de notre mail de confirmation d'achat et renoncez donc expressément à votre droit de rétractation. Vous confirmez avoir pris connaissance des <a href="{{ URL::to('legal/cgv') }}">conditions générales de vente</a> @if (Utils::isVowel($server_name)) d'@else de @endif{{ $server_name }} et vous confirmez que <b>{{ Auth::user()->Nickname }}</b> est le propriétaire du moyen de paiement ou que vous avez reçu l'autorisation du titulaire du moyen de paiement.
+                                        <input type="checkbox" name="cgv" value="1" /> En cochant cette case, vous acceptez expressément que la fourniture du contenu numérique (ogrines) commence immédiatement après l'envoi de notre mail de confirmation d'achat et renoncez donc expressément à votre droit de rétractation. Vous confirmez avoir pris connaissance des <a href="{{ URL::to('legal/cgv') }}">conditions générales de vente</a> @if (Utils::isVowel($server_name)) d'@else de @endif{{ $server_name }} et vous confirmez que <b>{{ Auth::user()->Nickname }}</b> est le propriétaire du moyen de paiement ou que vous avez reçu l'autorisation du titulaire du moyen de paiement.
                                     </label>
                                 </div>
                                 <button class="buy">

@@ -55,7 +55,7 @@
                     Vote pour le serveur !
                 </a>
                 <a class="btn-aside btn-shop" href="{{ URL::route('shop.payment.country') }}">
-                    <em>Une envie de cadeau ?</em>
+                    <em>Envie de cadeaux ?</em>
                     <br>
                     Achete des ogrines
                 </a>

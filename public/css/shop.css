@@ -136,6 +136,10 @@
     margin-bottom: 20px;
 }
 
+.shop .payment-cost {
+    max-width: 460px;
+}
+
 .shop .payment-code {
     color: #66614E;
     margin-top: 10px;
