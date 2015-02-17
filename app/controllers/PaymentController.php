@@ -16,7 +16,7 @@ class PaymentController extends \BaseController {
 			foreach ($json as $countryName => $country)
 			{
 				$this->payment->$countryName = new stdClass;
-				$points = 100;
+				$palier = "one";
 
 				foreach ($country as $methodName => $method)
 				{
@@ -24,6 +24,7 @@ class PaymentController extends \BaseController {
 
 					$newMethod = new stdClass;
 					$newMethod->devise = $method->sCurrencyToDisplay;
+					$newMethod->points = 100;
 
 					if ($methodName == "sms")
 					{
@@ -40,11 +41,11 @@ class PaymentController extends \BaseController {
 						$newMethod->text   = "{$method->audiotelFixedCostDetail}/appel {$method->audiotelVariableCostDetail}/min depuis une ligne fixe<br>Obtention du code en < 1,30 min. Coût : ".$method->fCostPerAction + (substr($method->audiotelVariableCostDetail, 2, 5) * 1.5)." {$method->sCurrencyToDisplay}";
 					}
 
-					$this->payment->$countryName->$methodName->$points = $newMethod;
+					$this->payment->$countryName->$methodName->$palier = $newMethod;
 				}
 			}
 		}
-		elseif ($this->isOneopay())
+		elseif ($this->isOneoPay())
 		{
 			$json = json_decode(file_get_contents(Config::get('dofus.payment.oneopay.url')));
 			$this->payment = new stdClass;
@@ -53,7 +54,7 @@ class PaymentController extends \BaseController {
 			{
 				$countryName = strtolower($method->country->iso);
 				$methodName  = strtolower($method->solution);
-				$points      = $method->user_earns;
+				$palier      = $method->rate;
 
 				if (!property_exists($this->payment, $countryName))
 				{
@@ -70,6 +71,7 @@ class PaymentController extends \BaseController {
 				$newMethod->devise = $method->user_currency == "EUR" ? "&euro;" : $method->user_currency;
 				$newMethod->text   = $method->mention;
 				$newMethod->cost   = $method->user_price . " " . $newMethod->devise;
+				$newMethod->points = $method->user_earns;
 
 				if ($methodName == "sms")
 				{
@@ -82,7 +84,7 @@ class PaymentController extends \BaseController {
 					$newMethod->number = $method->phone;
 				}
 
-				$this->payment->$countryName->$methodName->$points = $newMethod;
+				$this->payment->$countryName->$methodName->$palier = $newMethod;
 			}
 		}
 		else
@@ -124,7 +126,7 @@ class PaymentController extends \BaseController {
 		$data['code']    = (!empty($code)    ? $code :    Input::get('code'));
 		$data['cgv']     = (!empty($cgv)     ? $cgv :     Input::get('cgv'));
 
-		$split = explode('-', $data['method']);
+		$split = explode('_', $data['method']);
 		$data['method_'] = $split[0];
 		$data['palier']  = $split[1];
 
@@ -132,7 +134,6 @@ class PaymentController extends \BaseController {
 			array(
 				'country' => 'required|size:2|alpha_num',
 				'method_' => 'required|in:sms,audiotel,mobilecall',
-				'palier'  => 'required|numeric',
 				'cgv'     => 'required',
 			)
 		);
@@ -141,9 +142,6 @@ class PaymentController extends \BaseController {
 		{
 			return Redirect::route('shop.payment.method', $data['country'])->withErrors($validator);
 		}
-
-		$payment = $this->payment->fr->audiotel->{100};
-		$country = 'fr';
 
 		if (!isset($this->payment->$data['country']->$data['method_']->$data['palier']))
 		{
@@ -162,7 +160,7 @@ class PaymentController extends \BaseController {
 	{
 		$data = Input::all();
 
-		$split = explode('-', $data['method']);
+		$split = explode('_', $data['method']);
 		$data['method_'] = $split[0];
 		$data['palier']  = $split[1];
 
@@ -170,7 +168,6 @@ class PaymentController extends \BaseController {
 			array(
 				'country' => 'required|size:2|alpha_num',
 				'method_' => 'required|in:sms,audiotel,mobilecall',
-				'palier'  => 'required|numeric',
 				'code'    => 'required|min:6|max:8|alpha_num',
 				'cgv'     => 'required',
 			)
@@ -186,7 +183,7 @@ class PaymentController extends \BaseController {
 			return Redirect::route('shop.payment.code')->withErrors(array('palier' => 'Le palier selectionné est invalide.'))->withInput($data);
 		}
 
-		$validation = $this->checkCode($data['code']);
+		$validation = $this->checkCode($data['code'], $data['palier']);
 
 		var_dump($validation); // TODO
 
@@ -267,7 +264,7 @@ class PaymentController extends \BaseController {
 		}*/
 	}
 
-	private function checkCode($code)
+	private function checkCode($code, $palier)
 	{
 		$id = "";
 		$validation = "";
@@ -289,6 +286,7 @@ class PaymentController extends \BaseController {
 
 		$validation = str_replace('{ID}', $id, $validation);
 		$validation = str_replace('{CODE}', $code, $validation);
+		$validation = str_replace('{PALIER}', $palier, $validation);
 
 		$result = @file_get_contents($validation);
 
@@ -305,7 +303,7 @@ class PaymentController extends \BaseController {
 			return false;
 	}
 
-	private function isOneopay()
+	private function isOneoPay()
 	{
 		if (Config::get('dofus.payment.used') == "oneopay")
 			return true;

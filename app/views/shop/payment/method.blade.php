@@ -19,13 +19,13 @@
                                     <span class="picto"></span> Choisissez votre mode de paiement &nbsp;<span class="icon-flag flag-{{ $country }}"></span>
                                 </div>
 @foreach ($payment as $methodName => $method)
-@foreach ($method as $points => $data)
+@foreach ($method as $palier => $data)
                                 <label>
                                     <div class="shop-element">
-                                        <input type="radio" name="method" value="{{ $methodName }}-{{ $points }}" />
+                                        <input type="radio" name="method" value="{{ $methodName }}_{{ $palier }}" />
                                         <span class="shop-element-description">
                                             <span class="shop-icon"><img src="{{ URL::asset('imgs/shop/payment/' . $methodName . '.png') }}" /></span>
-                                            <span class="shop-name">Code {{ $methodName }} : <span>{{ $points }} - {{ $data->cost }}</span></span>
+                                            <span class="shop-name">Code {{ $methodName }} : <span>{{ $data->points }} - {{ $data->cost }}</span></span>
                                         </span>
 @if ( array_key_exists($country . '|' . $methodName, Config::get('dofus.promos')) )
                                         <div class="shop-promo">

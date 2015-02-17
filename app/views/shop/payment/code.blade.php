@@ -14,7 +14,7 @@
                     <div class="shop">
                         <div class="shop-content">
                             <div class="title">
-                                <span class="picto"></span> Paiement par {{ $method }} pour {{ $palier }} Ogrines &nbsp;<span class="icon-flag flag-{{ $country }}"></span>
+                                <span class="picto"></span> Paiement par {{ $method }} pour {{ $payment->points }} Ogrines &nbsp;<span class="icon-flag flag-{{ $country }}"></span>
                             </div>
                             <div class="payment">
                                 <div class="payment-info left">
@@ -31,7 +31,7 @@
                                     <div class="payment-code form-group">
                                         {{ Form::open(array('route' => 'shop.payment.process')) }}
                                             <input type="hidden" name="country" value="{{ $country }}" />
-                                            <input type="hidden" name="method" value="{{ $method }}-{{ $palier }}" />
+                                            <input type="hidden" name="method" value="{{ $method }}_{{ $palier }}" />
                                             <input type="hidden" name="cgv" value="{{ $cgv }}" />
                                             @if ($errors->has('code')) <div class="input-error">{{ $errors->first('code') }}</div> @endif
                                             Entrez votre code : <input type="text" name="code" value="{{ Input::old('code') }}" @if ($errors->has('code')) class="has-error" @endif />

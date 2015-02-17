@@ -41,7 +41,7 @@ return array (
             "name"       => 'OneoPay',
             //'url'        => 'http://oneopay.com/api/rates.php?service=15',
             'url'        => 'oneopay.json',
-            'validation' => 'https://oneopay.com/api/checkcode.php?service=1&rate={ID}&code={CODE}',
+            'validation' => 'https://oneopay.com/api/checkcode.php?service=1&rate={PALIER}&code={CODE}',
             'id'         => 15,
             'secret'     => '',
         ),
