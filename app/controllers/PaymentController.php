@@ -185,8 +185,6 @@ class PaymentController extends \BaseController {
 
 		$validation = $this->checkCode($data['code'], $data['palier']);
 
-		var_dump($validation); // TODO
-
 		/**
 		* States :
 		* 0: Success
@@ -194,58 +192,7 @@ class PaymentController extends \BaseController {
 		* 2: Error
 		**/
 
-		/*if ($validation)
-		{
-			$validation = explode('|', $validation);
-
-			if ($validation[0] == "OUI")
-			{
-				// Success
-
-				$points = Config::get('dofus.points');
-
-				if (array_key_exists($data['country'] . '|' . $data['method'], Config::get('dofus.promos')))
-				{
-					$points += Config::get('dofus.promos')[$data['country'] . '|' . $data['method']];
-				}
-
-				$transaction = array(
-					'account'     => Auth::user()->Id,
-					'state'       => 0,
-					'code'        => $data['code'],
-					'points'      => $points,
-					'country'     => $validation[2],
-					'palier_name' => $validation[3],
-					'palier_id'   => $validation[4],
-					'type'        => $validation[5],
-				);
-
-				Transaction::create($transaction);
-
-				Auth::user()->NewTokens += $points;
-				Auth::user()->update(array('NewTokens' => Auth::user()->NewTokens));
-
-				return Redirect::route('home'); // TODO: Tell him he's a winner :)
-			}
-			else
-			{
-				// Fail
-
-				$transaction = array(
-					'account'     => Auth::user()->Id,
-					'state'       => 1,
-					'code'        => $data['code'],
-					'points'      => 0,
-					'country'     => $data['country'],
-					'type'        => $data['method'],
-				);
-
-				Transaction::create($transaction);
-
-				return Redirect::route('shop.payment.code')->withErrors(array('code' => 'Code incorrecte.'))->withInput();
-			}
-		}
-		else
+		if ($validation->error)
 		{
 			// Something wrong
 
@@ -260,14 +207,58 @@ class PaymentController extends \BaseController {
 
 			Transaction::create($transaction);
 
-			return Redirect::route('shop.payment.code')->withErrors(array('code' => 'La vérification du code à échoué.'))->withInput();
-		}*/
+			return Redirect::route('shop.payment.code')->withErrors(array('code' => $validation->error))->withInput();
+		}
+		else
+		{
+			if ($validation->success)
+			{
+				$transaction = array(
+					'account'     => Auth::user()->Id,
+					'state'       => 0,
+					'code'        => $validation->code,
+					'points'      => $validation->points,
+					'country'     => $validation->country,
+					'palier_name' => $validation->palier_name,
+					'palier_id'   => $validation->palier_id,
+					'type'        => $validation->type,
+				);
+
+				Transaction::create($transaction);
+
+				Auth::user()->NewTokens += $validation->points;
+				Auth::user()->update(array('NewTokens' => Auth::user()->NewTokens));
+
+				return Redirect::route('home'); // TODO: Tell him he's a winner :)
+			}
+			else
+			{
+				// Fail
+
+				$transaction = array(
+					'account'     => Auth::user()->Id,
+					'state'       => 1,
+					'code'        => $validation->code,
+					'points'      => 0,
+					'country'     => $data['country'],
+					'type'        => $data['method'],
+				);
+
+				Transaction::create($transaction);
+
+				return Redirect::route('shop.payment.code')->withErrors(array('code' => $validation->message))->withInput();
+			}
+		}
 	}
 
 	private function checkCode($code, $palier)
 	{
 		$id = "";
 		$validation = "";
+
+		$check = new stdClass;
+		$check->code = $code;
+		$check->error = false;
 
 		if ($this->isStarpass())
 		{
@@ -281,7 +272,9 @@ class PaymentController extends \BaseController {
 		}
 		else
 		{
-			return false;
+			$check->error = "La vérification du code à échoué.";
+			$check->success = false;
+			return $check;
 		}
 
 		$validation = str_replace('{ID}', $id, $validation);
@@ -290,9 +283,54 @@ class PaymentController extends \BaseController {
 
 		$result = @file_get_contents($validation);
 
-		// TODO: format result
+		if ($this->isStarpass())
+		{
+			$check->provider = Config::get('dofus.payment.starpass.name');
 
-		return $result;
+			$result = explode('|', $result);
+
+			if ($result[0] == "OUI")
+			{
+				$check->success = true;
+
+				$check->country     = $result[2];
+				$check->palier_name = $result[3];
+				$check->palier_id   = $result[4];
+				$check->type        = $result[5];
+				$check->points      = 100;
+			}
+			else
+			{
+				$check->message = "Code invalide.";
+				$check->success = false;
+			}
+		}
+		elseif ($this->isOneopay())
+		{
+			$check->provider = Config::get('dofus.payment.oneopay.name');
+
+			$result = json_decode($result);
+
+			if ($result->status == "success")
+			{
+				$check->success = true;
+
+				$identifier = explode('-', $result->identifier);
+
+				$check->country     = strtolower($identifier[1]);
+				$check->palier_name = $result->identifier;
+				$check->palier_id   = 0;
+				$check->type        = strtolower($identifier[2]);
+				$check->points      = $identifier[3];
+			}
+			else
+			{
+				$check->message = $result->message;
+				$check->success = false;
+			}
+		}
+
+		return $check;
 	}
 
 	private function isStarpass()
