@@ -6,11 +6,20 @@ class PaymentController extends \BaseController {
 
 	public function __construct()
 	{
-		// TODO: cache
-
 		if ($this->isStarpass())
 		{
-			$json = json_decode(file_get_contents(Config::get('dofus.payment.starpass.url')));
+			$json = null;
+
+			if (Cache::has('payment.starpass'))
+			{
+				$json = Cache::get('payment.starpass');
+			}
+			else
+			{
+				$json = json_decode(file_get_contents(Config::get('dofus.payment.starpass.url')));
+				Cache::put('payment.starpass', $json, 10);
+			}
+
 			$this->payment = new stdClass;
 
 			foreach ($json as $countryName => $country)
@@ -47,7 +56,18 @@ class PaymentController extends \BaseController {
 		}
 		elseif ($this->isOneoPay())
 		{
-			$json = json_decode(file_get_contents(Config::get('dofus.payment.oneopay.url')));
+			$json = null;
+
+			if (Cache::has('payment.oneopay'))
+			{
+				$json = Cache::get('payment.oneopay');
+			}
+			else
+			{
+				$json = json_decode(file_get_contents(Config::get('dofus.payment.oneopay.url')));
+				Cache::put('payment.oneopay', $json, 10);
+			}
+
 			$this->payment = new stdClass;
 
 			foreach ($json as $method)
