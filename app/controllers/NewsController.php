@@ -25,7 +25,8 @@ class NewsController extends \BaseController {
 	public function show($id, $slug)
 	{
 		$post = Post::findOrFail($id);
+		$comments = Comment::where('post_id', $id)->orderBy('date', 'desc')->paginate(10);
 
-		return View::make('news.post', compact('post'));
+		return View::make('news.post', array("post" => $post, "comments" => $comments));
 	}
 }

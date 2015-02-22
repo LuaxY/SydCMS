@@ -19,10 +19,10 @@
                     </article>
                 </div> <!-- content -->
 
-                <div class="content comments">
+                <div class="content comments" id="comments">
                     <div class="title title-arrow">Commentaires ({{ $post->comments->count() }})</div>
                     <div class="comments-list">
-@foreach ($post->comments as $comment)
+@foreach ($comments as $comment)
                         <div class="comment @if ($comment->author->isAdmin()) admin @elseif ($comment->author->isStaff()) staff @endif">
                             <div class="comment-avatar">
                                 <div class="author-image"><img src="{{ URL::asset($comment->author->Avatar) }}" /></div>
@@ -39,5 +39,8 @@
 @endforeach
                     </div>
                     &nbsp;
+                    <div class="pagination-block">
+                        {{ $comments->fragment('comments')->links() }}
+                    </div>
                 </div> <!-- content -->
 @stop
