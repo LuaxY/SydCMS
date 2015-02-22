@@ -63,4 +63,20 @@ class Account extends \Eloquent implements UserInterface {
 	{
 		return null; // not supported
 	}
+
+	public function isAdmin()
+	{
+		if ($this->Role >= 4)
+			return true;
+		else
+			return false;
+	}
+
+	public function isStaff()
+	{
+		if ($this->Role > 1)
+			return true;
+		else
+			return false;
+	}
 }

@@ -13,6 +13,6 @@ class Post extends \Eloquent {
 
 	public function comments()
 	{
-		return $this->hasMany('Comment', 'post_id', 'id');
+		return $this->hasMany('Comment', 'post_id', 'id')->orderBy('date', 'desc');
 	}
 }
