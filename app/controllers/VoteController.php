@@ -40,11 +40,11 @@ class VoteController extends \BaseController {
 			return $this->index();
 
 		Auth::user()->VoteCount += 1;
-		Auth::user()->NewTokens += 10;
+		Auth::user()->Tokens += 10;
 
 		Auth::user()->update(array(
 			'VoteCount' => Auth::user()->VoteCount,
-			'NewTokens' => Auth::user()->NewTokens,
+			'Tokens' => Auth::user()->Tokens,
 			'LastVote'  => date("Y-m-d H:i:s"),
 		));
 
