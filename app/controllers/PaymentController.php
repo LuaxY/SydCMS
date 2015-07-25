@@ -147,8 +147,8 @@ class PaymentController extends \BaseController {
 		$data['cgv']     = (!empty($cgv)     ? $cgv :     Input::get('cgv'));
 
 		$split = explode('_', $data['method']);
-		$data['method_'] = $split[0];
-		$data['palier']  = $split[1];
+		$data['method_'] = @$split[0];
+		$data['palier']  = @$split[1];
 
 		$validator = Validator::make($data,
 			array(
