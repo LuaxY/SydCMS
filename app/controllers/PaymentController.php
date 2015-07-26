@@ -246,8 +246,8 @@ class PaymentController extends \BaseController {
 
 				Transaction::create($transaction);
 
-				Auth::user()->NewTokens += $validation->points;
-				Auth::user()->update(array('NewTokens' => Auth::user()->NewTokens));
+				Auth::user()->Tokens += $validation->points;
+				Auth::user()->update(array('Tokens' => Auth::user()->Tokens));
 
 				return Redirect::route('home'); // TODO: Tell him he's a winner :)
 			}
