@@ -6,7 +6,7 @@ return array (
     'server_name' => 'Erezia',
 
     // Theme (see /public/imgs/carousel)
-    'theme' => false,
+    'theme' => 'super-vilains',
 
     // Base points in shop
     'points' => 100,

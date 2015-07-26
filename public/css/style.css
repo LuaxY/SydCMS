@@ -114,13 +114,14 @@ button {
 }
 
 #header #logo {
-    width: 550px;
-    height: 287px;
+    width: 250px;
+    height: 130px;
     background: url("../imgs/erezia.png") no-repeat;
-    background-size: 550px 287px;
+    background-size: 250px 130px;
     z-index: 1500 !important;
     position: relative;
-    margin-top: 50px;
+    margin:-41px auto 0 auto;
+    float: left;
 }
 
 #header #menu {
@@ -140,6 +141,11 @@ button {
 #header #menu a:hover {
     text-decoration: none;
     color: #07FEEC;
+}
+
+#header #menu .box {
+    width: 325px;
+    padding: 0;
 }
 
 /*-----------------------------------------------*/

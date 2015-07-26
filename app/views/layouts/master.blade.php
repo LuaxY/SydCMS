@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>{{ $server_name }} - Serveur 2.27</title>
+    <title>{{ $server_name }} - Serveur 2.29</title>
     <link rel="icon" type="image/png" href="{{ URL::asset('imgs/favicon.png') }}" />
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oswald" type="text/css">
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto" type="text/css">
@@ -16,16 +16,18 @@
     <div id="header">
         <div class="container">
             <div id="menu">
-                <ul>
+                <ul class="box left">
                     <li><a href="{{ URL::route('home') }}">{{ $server_name }}</a></li>
                     <li><a href="{{ URL::route('register') }}">Rejoindre</a></li>
                     <li><a href="{{ URL::to('server') }}">Serveur</a></li>
+                </ul>
+                <a href="{{ URL::route('home') }}"><div id="logo"></div></a>
+                <ul class="box right">
                     <li><a href="{{ URL::to('events') }}">Tournois</a></li>
                     <li><a href="http://forum.erezia.net/">Forum</a></li>
                     <li><a href="{{ URL::to('support') }}">Support</a></li>
                 </ul>
             </div>
-            <a href="{{ URL::route('home') }}"><div id="logo"></div></a>
         </div>
     </div>
 

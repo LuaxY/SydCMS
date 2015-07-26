@@ -61,7 +61,6 @@
     border-bottom-color: #97A800;
 }
 
-
 .post.dev .post-comments-count a,
 .post.dev .post-info .post-date a {
     color: #97A800;
@@ -134,6 +133,7 @@
     border-top: 1px dashed #B1AC9C;
     font-family: 'Roboto', sans-serif;
     font-size: 15px;
+    text-align: justify;
 }
 
 .post .post-ellipsis {
@@ -186,6 +186,7 @@
 
 .content article {
     padding: 37px 75px;
+    text-align: justify;
 }
 
 .content article img.big-image {
